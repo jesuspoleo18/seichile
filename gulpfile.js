@@ -68,12 +68,12 @@ gulp.task("compileCSS", function () {
 
 // img opti
 gulp.task('optiImg', function () {
-    return gulp.src('dist/assets/img/originales/cliente/categDepto/desktop/*')
+    return gulp.src('dist/assets/img/originales/*')
         // .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
         .pipe(imagemin([
             imageminMozjpeg({
                 quality: 80
             })
         ]))
-        .pipe(gulp.dest('dist/assets/img/optimizadas/produccion/cliente/categDepto/desktop'));
+        .pipe(gulp.dest('dist/assets/img/optimizadas'));
 });

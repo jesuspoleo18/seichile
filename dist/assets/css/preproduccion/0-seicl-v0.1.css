@@ -3,8 +3,8 @@
 [Stylesheet - principal ]
 
 Projecto:  SEI - 2017
-Version: 0.0.0
-Ultimo cambio: 2018-05-04 | 17:14pm
+Version: 0.0.1
+Ultimo cambio: 2018-05-07 | 19:17pm
 Asignado a: Implementacion.
 Primary use: Ecommerce. 
 
@@ -157,6 +157,23 @@ p {
 
 .label {
     background: 0;
+}
+
+.overlay {
+    background-color: #000;
+    display: block;
+    height: 100%;
+    opacity: .5;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.overlay.medium {
+    opacity: .2;
 }
 
 /*
@@ -419,6 +436,8 @@ p {
 #widemenu {
     font-family: 'Dosis', sans-serif;
     font-size: 1rem;
+    position: relative;
+    z-index: 2;
 }
 
 #widemenu .is-stuck {
@@ -1027,6 +1046,7 @@ p {
 .prateleira li .producto-prateleira__info--precio-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-flow: wrap;
 }
 
@@ -1079,26 +1099,18 @@ p {
 .prateleira .wrapper-buy-button-asynchronous .btn-add-buy-button-asynchronous {
     background: #1E1B1C;
     color: #fff;
-    font-size: 0;
-    margin: 0 auto;
+    font-family: 'Dosis', sans-serif;
+    /*     margin-bottom: 1rem; */
+    margin-right: .5rem;
     padding: .8rem;
     text-transform: uppercase;
-    width: 90%;
     -webkit-transition: all 0.2s ease-out 0s;
     -o-transition: all 0.2s ease-out 0s;
     transition: all 0.2s ease-out 0s;
-    /*FLEX*/
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    margin-right: .5rem;
     width: 100%;
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
 }
 
 .prateleira li:hover .btn-add-buy-button-asynchronous {
@@ -1106,7 +1118,7 @@ p {
 }
 
 .prateleira .wrapper-buy-button-asynchronous .btn-add-buy-button-asynchronous::before {
-    content: "Ver Producto";
+    /*     content: "Ver Producto"; */
     font-family: 'Dosis', sans-serif;
     font-size: .85rem;
 }
@@ -1998,7 +2010,7 @@ p {
 #slideshow {
     position: relative;
     padding: 0 4rem;
-    z-index: -1;
+    z-index: 1;
 }
 
 #slideshow .slick-dots {
@@ -2586,28 +2598,60 @@ p {
     transition: all .2s linear !important;
 }
 
+.banner-categoria .overlay {
+    opacity: 0;
+}
+
+.home-categorias .banner-categoria * {
+    transition: all .2s ease;
+}
+
 .home-categorias .banner-categoria img {
     width: 100%;
 }
 
-.home-categorias .banner-categoria button {
-    background: #ffffff;
-    border-bottom: 1px solid #1E1B1C;
+.banner-categoria {
+    box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+}
+
+.banner-categoria__link-info {
+    background: white;
+    position: absolute;
+    padding: .8rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-categoria__link-helper {
+    color: black;
+}
+
+.banner-categoria__link {
+    /*     border-bottom: 1px solid #1E1B1C; */
     bottom: 20px;
     color: #1E1B1C;
     font-family: 'Dosis', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
-    margin: 0 auto;
-    padding: .8rem .5rem;
+    padding: 0;
+    margin: 0;
     right: 0;
-    width: 100%;
-    transition: all .2s linear !important;
+    width: auto;
 }
 
-.home-categorias .banner-categoria:hover button {
+.banner-categoria__link.sublink {
+    padding: 0;
+}
+
+.banner-categoria:hover .banner-categoria__link-info {
     background: #1E1B1C;
-    color: #fff;
+    color: white;
+}
+
+.banner-categoria:hover .banner-categoria__link,
+.banner-categoria:hover .banner-categoria__link-helper {
+    color: white;
 }
 
 /*Destacados ===========================================*/
@@ -2642,6 +2686,10 @@ p {
 }
 
 /*Coleccion =============================================*/
+
+.banner-collecion * {
+    transition: all .2s linear !important;
+}
 
 .home-coleccion {
     display: flex;
@@ -2695,6 +2743,14 @@ p {
 
 .home-coleccion .banner-collecion:hover .post-image-hover {
     background: #17171766;
+}
+
+.banner-collecion .overlay {
+    opacity: 0;
+}
+
+.banner-collecion:hover .overlay {
+    opacity: .2;
 }
 
 /*Promesas =============================================*/
