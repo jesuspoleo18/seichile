@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce"
+    lang="en-us">
+
+    <!-- head -->
+    <head>
+
+        <!-- title -->
+        <title><vtex.cmc:searchTitle /></title>
+        <!-- sub template head -->
+        <vtex:template id="1-seicl-head" />
+
+    </head>
+    <!-- /.end head -->
+
+    <!-- body -->
+    <body>
+
+        <!-- inicio off canvas wrapper -->
+        <div class="off-canvas-wrap" data-offcanvas="">
+
+            <!-- inicio off canvas wrapper inner -->
+            <div class="inner-wrap">
+
+                <!-- header -->
+                <header id="header">
+                    <vtex:template id="1-seicl-header" />
+                </header>
+                <!-- /.end header -->
+
+                <!-- navigator -->
+                <nav>
+                    <vtex:template id="1-seicl-navigator" />
+                </nav>
+                <!-- /.end navigator -->
+
+                <!-- main -->
+                <main>
+
+                    <!-- main section -->
+                    <section id="depto" class="main-section">
+
+                        <!-- depto banner -->
+                        <div class="Depto__banner">
+                            <vtex:contentPlaceHolder id="Depto__banner" />
+                        </div>
+                        <!-- /.end depto banner -->
+
+                        <!-- breadcrumb -->
+                        <div class="Depto__breadcrumb">
+                            <vtex.cmc:breadCrumb />
+                        </div>
+                        <!-- /.fin breadcrumb -->
+
+                        <!-- depto content -->
+                        <div class="Depto__content">
+
+                            <!-- search navigator -->
+                            <aside class="Depto__content--aside">
+
+                                <h6>Filtros</h6>
+                                <vtex.cmc:searchNavigator />
+
+                            </aside>
+                            <!-- /.fin search navigator -->
+
+                            <!-- filtro lateral mobile -->
+                            <div class="Depto__content--filtroBtnMobile">
+
+                                <a class="btn filtro" data-toggle="offCanvas-left-mobile" aria-expanded="false" aria-controls="offCanvas-left-mobile">FILTROS</a>
+
+                            </div>
+                            <!-- /.end filtro lateral mobile -->
+
+                            <!-- search navigator mobile -->
+                            <div class="Depto__content--offCanvasMobile off-canvas position-left" id="offCanvas-left-mobile" data-off-canvas="">
+
+                                <div class="off-canvas-content" data-off-canvas-content="">
+                                    <vtex.cmc:searchNavigator />
+                                </div>
+
+                            </div>
+                            <!-- /.fin search navigator mobile -->
+
+                            <!-- Listing Product -->
+                            <div class="Depto__content--listingProduct">
+
+                                <vtex.cmc:searchResult layout="1869a340-6641-496e-a11c-e78006373e26" itemCount="20" columnCount="3" />
+
+                            </div>
+                            <!-- /Listing Product -->
+
+                        </div>
+                        <!-- /.end depto content -->
+
+                    </section>
+                    <!-- /.end main section -->
+
+                </main>
+                <!-- ./end main -->
+
+                <!-- facebook api -->
+                <vtex:template id="1-sei-fbsdk" />
+                
+                <!-- giftListModule -->
+                <div class="giftlistModule">
+                    <vtex.cmc:GiftListInsertSkuV2 />
+                </div>
+                <!-- /.fin giftListModule -->
+
+                <!-- footer -->
+                <footer>
+
+                    <vtex:template id="1-seicl-footer" />
+
+                </footer>
+                <!-- /.end footer -->
+
+                <!-- back to top -->
+                <a href="#0" class="back-to-top back-to-top-is-visible"></a>
+
+            </div>
+            <!-- /.end inicio off canvas wrapper inner -->
+
+        </div>
+        <!-- /.end inicio off canvas wrapper -->
+
+    </body>
+    <!-- /.end body -->
+
+</html>

@@ -1,0 +1,246 @@
+<!-- "Sticky" top-bar menu for 'medium' and up -->
+<div id="widemenu" class="hide-for-small" data-sticky-container="">
+
+    <div class="top-bar-container sticky" data-sticky="" data-margin-top="0" data-top-anchor="header:bottom">
+
+        <div class="menu-sei">
+
+            <div class="inner-wrap-menu">
+
+                <div class="top-bar-left">
+                    <a class="trns" href="/">
+                        <i class="icon-sei_logo" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="top-bar-center">
+                    <ul id="mega-menu-container" class="dropdown menu" data-dropdown-menu="">
+
+                        <!-- Linea temporada -->
+                        <li class="Widemenu_title temporada no-megamenu">
+                            <a href="/Cuero?PS=12&amp;map=c,specificationFilter_27">Línea Cuero</a>
+                        </li>
+
+                        <!-- Cartera -->
+                        <li class="Widemenu_title carteras no-megamenu">
+                            <a href="/carteras">Cartera</a>
+                        </li>
+
+                        <!-- Calzado -->
+                        <li class="Widemenu_title calzado no-megamenu">
+                            <a href="/zapatos">Calzado</a>
+                        </li>
+
+                        <!-- Billeteras y Estuches -->
+                        <li class="Widemenu_title billeteras no-megamenu">
+                            <a href="/billeteras-y-estuches">Billeteras y Estuches</a>
+                        </li>
+
+                        <!-- Accesorios -->
+                        <li class="Widemenu_title accesorios no-megamenu">
+                            <a href="/accesorios">Accesorios</a>
+                        </li>
+
+                        <!-- Ideas Regalo -->
+                        <li class="Widemenu_title regalos">
+                            <a href="/ideas-de-regalo">Ideas de Regalo</a>
+                        </li>
+
+                        <!-- Ideas Regalo megamenu -->
+                        <div class="Widemenu__container regalos">
+                            <!-- Widemenu content -->
+                            <div class="Widemenu__content">
+                                <!-- Widemenu columns -->
+                                <div class="Widemenu__col">
+                                    <!-- Widemenu title -->
+                                    <h1 class="Widemenu__title">Elige Regalo</h1>
+                                    <!-- Widemenu menu content -->
+                                    <div class="Widemenu__menu-content">
+                                        <!-- Widemenu menu items -->
+                                        <a href="#" class="Widemenu__menu-items hasFlag">Hasta $12.990</a>
+                                        <a href="#" class="Widemenu__menu-items">Hasta $24.990</a>
+                                        <a href="#" class="Widemenu__menu-items">Hasta $36.990</a>
+                                    </div>
+                                </div>
+                                <!-- /.end Widemenu columns -->
+                            </div>
+                            <!-- /.end Widemenu content -->
+                        </div>
+                        <!-- /.end Ideas Regalo megamenu -->
+
+                        <!-- SALE -->
+                        <!-- <li class="Widemenu_title rebajas no-megamenu">
+                            <a href="#">Rebajas</a>
+                        </li> -->
+
+                    </ul>
+
+                </div>
+
+                <div class="top-bar-right">
+                    <ul id="mega-menu-container" class="dropdown menu" data-dropdown-menu="">
+
+                        <!-- carrito -->
+                        <div class="megamenu-container__content-cart">
+                            <a href="/checkout/" title="Carro de compras">
+                                <i class="icon-sei_shoppingbag" aria-hidden="true"></i>
+                                <vtex.cmc:AmountItemsInCart/>
+                                <vtex.cmc:miniCart/>
+                            </a>
+                        </div>
+                        <!-- /.fin carrito -->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!-- /.end "Sticky" top-bar menu for 'medium' and up -->
+
+<!-- off-canvas title bar for 'small' screen -->
+<div id="Widemenu_mobile" class="title-bar text-center" data-responsive-toggle="widemenu">
+    <div class="title-bar-left">
+        <button class="menu-icon" type="button" data-toggle="offCanvasLeft">
+            <i class="icon-sei_menu" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <div class="title-bar-center">
+        <span class="title-bar-title">
+            <a class="trns" href="/">
+                <i class="icon-sei_logo" aria-hidden="true"></i>
+            </a>
+        </span>
+    </div>
+
+    <div class="title-bar-right">
+        <!-- search bar -->
+        <div class="title-bar-right__search">
+            <a class="search-button" href="#">
+                <i class="icon-sei_search" aria-hidden="true"></i>
+            </a>
+            <div class="search-button__input">
+                <vtex.cmc:fullTextSearchBox/>
+                <div class="search-button-input__closeBar">
+                    <span>x</span>
+                </div>
+            </div>
+        </div>
+        <!-- Carrito -->
+        <div class="title-bar-right__cart">
+            <button class="menu-icon" type="button" data-toggle="offCanvasRight">
+                <i class="icon-sei_shoppingbag" aria-hidden="true"></i>
+            </button>
+            <div id="productBag">
+                <vtex.cmc:AmountItemsInCart/>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.end off-canvas title bar for 'small' screen -->
+
+<!-- off-canvas left menu -->
+<div class="off-canvas position-left Widemenu-mobile" id="offCanvasLeft" data-position="left" data-off-canvas="">
+
+    <ul class="vertical menu" data-drilldown="">
+        <!-- start of the drilldown multi level menu -->
+
+        <button class="close-button" aria-label="Close menu" type="button" data-close="">
+            <span aria-hidden="true">&amp;times;</span>
+        </button>
+
+        <!-- Linea temporada -->
+        <li class="Widemenu-mobile_title temporada-offcanvas">
+            <a href="/Cuero?PS=12&amp;map=c,specificationFilter_27">Línea Cuero</a>
+        </li>
+
+        <!-- Cartera -->
+        <li class="Widemenu-mobile_title carteras-offcanvas">
+            <a href="/carteras">Cartera</a>
+        </li>
+
+        <!-- Calzado -->
+        <li class="Widemenu-mobile_title calzado-offcanvas">
+            <a href="/zapatos">Calzado</a>
+        </li>
+
+        <!-- Billeteras y Estuches -->
+        <li class="Widemenu-mobile_title billeteras-offcanvas">
+            <a href="/billeteras-y-estuches">Billeteras y Estuches</a>
+        </li>
+
+        <!-- Accesorios -->
+        <li class="Widemenu-mobile_title accesorios-offcanvas">
+            <a href="/accesorios">Accesorios</a>
+        </li>
+
+        <!-- Ideas Regalo -->
+        <li class="Widemenu-mobile_title regalos-offcanvas">
+            <a href="/ideas-de-regalo">Ideas de Regalo</a>
+        </li>
+
+        <!-- SALE -->
+        <!-- <li class="Widemenu-mobile_title rebajas-offcanvas">
+            <a href="#">Rebajas</a>
+        </li> -->
+
+        <ul class="usuario-offcanvas">
+            <h2 class="Widemenu-mobile_title">Usuario</h2>
+            <li>
+                <a href="#">
+                    <i class="icon-sei_account" aria-hidden="true"></i>
+                    Mi Cuenta
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-sei_box" aria-hidden="true"></i>
+                    Mis Pedidos
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-sei_whishlist" aria-hidden="true"></i>
+                    Favoritos
+                </a>
+            </li>
+        </ul>
+
+        <ul class="redes-sociales-offcanvas">
+            <h2 class="Widemenu-mobile_title">Síguenos en</h2>
+            <li>
+                <a target="_blank" href="https://www.facebook.com/TiendasSei/">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.instagram.com/tiendassei/">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.youtube.com/channel/UCW4artgMo9Y9xf0M3_jGcDA">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+
+    </ul>
+</div>
+<!-- /.end off-canvas left menu -->
+
+<!-- off-canvas right menu -->
+<div class="off-canvas position-right" id="offCanvasRight" data-position="right" data-off-canvas="">
+    <ul class="vertical menu" data-drilldown="">
+        <!-- start of the drilldown multi level menu -->
+        <li class="AmountItemsInCart">
+            <a href="/checkout/" title="Bolsa de Compras">
+                <vtex.cmc:AmountItemsInCart/>
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- /.end off-canvas right menu -->
