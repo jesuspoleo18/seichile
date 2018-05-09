@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce"
+    lang="en-us">
+
+    <!-- head -->
+    <head>
+        <!-- title -->
+        <vtex.cmc:productPageTitle />
+        <!-- sub template head -->
+        <vtex:template id="1-seicl-head" />
+    </head>
+    <!-- /.end head -->
+
+    <!-- body -->
+    <body>
+
+        <!-- inicio off canvas wrapper -->
+        <div class="off-canvas-wrap" data-offcanvas="">
+
+            <!-- inicio off canvas wrapper inner -->
+            <div class="inner-wrap">
+
+                <!-- header -->
+                <header id="header">
+                    <vtex:template id="1-seicl-header" />
+                </header>
+                <!-- /.end header -->
+
+                <!-- navigation -->
+                <nav>
+                    <vtex:template id="1-seicl-navigator" />
+                </nav>
+                <!-- /.end navigation -->
+
+                <!-- main -->
+                <main>
+
+                    <!-- main container -->
+                    <section id="product" class="main-section">
+
+                        <!-- breadcrumb -->
+                        <div class="Product__breadcrumb">
+                            <vtex.cmc:breadCrumb />
+                        </div>
+                        <!-- /.fin breadcrumb -->
+
+                        <!-- product container  -->
+                        <section class="product__container">
+
+                            <!-- product name mobile -->
+                            <div class="product__name--mobile">
+                                <vtex.cmc:productName />
+                            </div>
+                            <!-- /.end product name mobile -->
+
+                            <!-- product ean -->
+                            <div class="product__ean--mobile">
+                                <h6>Cod:</h6>
+                                <vtex.cmc:skuReference/>
+                            </div>
+                            <!-- /.end product ean -->
+
+                            <!-- product left side -->
+                            <div class="product__left-side">
+
+                                <!-- product img container -->
+                                <div class="product__img-container">
+                                    <!-- img control -->
+                                    <vtex.cmc:ProductImage zoom="on" />
+                                </div>
+                                <!-- /.end product img container -->
+
+                            </div>
+
+                            <!-- product right side -->
+                            <div class="product__right-side">
+
+                                <!-- product name -->
+                                <div class="product__name">
+                                    <vtex.cmc:productName />
+                                </div>
+                                <!-- /.end product name -->
+
+                                <!-- product ean -->
+                                <div class="product__ean">
+                                    <h6>Cod:</h6>
+                                    <vtex.cmc:skuReference/>
+                                </div>
+                                <!-- /.end product ean -->
+
+                                <!-- Selector tallas -->
+                                <div class="product__tallas">
+                                    <small>Selecciona tu talla:</small>
+                                    <vtex.cmc:skuSelection mode="radio" />
+                                </div>
+                                <!-- /.fin Selector tallas -->
+
+                                <!-- product price -->
+                                <div class="product__price">
+                                    <vtex.cmc:skuPrice/>
+                                </div>
+                                <!-- /.end product price -->
+
+                                <!-- descripcion larga -->
+                                <div class="product__short-descripcion">
+                                    <vtex.cmc:productDescriptionShort />
+                                </div>
+                                <!-- /.fin descripcion larga -->
+
+                                <!-- product shop container -->
+                                <div class="product__shop-container">
+                                    <!-- product shop content -->
+                                    <div class="product__shop-content">
+                                        <vtex.cmc:BuyButton />
+                                    </div>
+                                </div>
+                                <!-- /.end product shop container -->
+
+                                <div class="product__wishlist-container">
+                                    <div class="product__wishlist-content">
+                                        <vtex.cmc:GiftListInsertSkuV2 popup="true" />
+                                    </div>
+                                </div>
+
+                                <!-- comparte -->
+                                <div class="product__comparte">
+                                    <h6 class="basica-comparte-title">Comparte:</h6>
+                                    <vtex:contentPlaceHolder id="redes-sociales" />
+                                </div>
+                                <!-- /.fin comparte -->
+
+                            </div>
+
+                            <div class="product__bottom-side">
+
+                                <div class="product__bottom-description">
+                                    <h3>Descripción</h3>
+                                    <vtex.cmc:ProductDescription />
+                                </div>
+
+                                <div class="product__bottom-especifications">
+                                    <h3>Especificaciones</h3>
+                                    <vtex.cmc:productSpecification />
+                                </div>
+
+                            </div>
+
+                        </section>
+                        <!-- /.end product container -->
+                    </section>
+
+                </main>
+                <!-- ./end main -->
+
+                <!-- facebook api -->
+                <vtex:template id="1-seicl-fbsdk" />
+                
+                <!-- giftListModule -->
+                <div class="giftlistModule">
+                    <vtex.cmc:GiftListInsertSkuV2 />
+                </div>
+                <!-- /.fin giftListModule -->
+                
+                <!-- footer -->
+                <footer>
+                    <vtex:template id="1-seicl-footer" />
+                </footer>
+                <!-- /.end footer -->
+
+                <!-- back to top -->
+                <a href="#0" class="back-to-top back-to-top-is-visible"></a>
+
+            </div>
+            <!-- /.end inicio off canvas wrapper inner -->
+
+        </div>
+        <!-- /.end inicio off canvas wrapper -->
+
+    </body>
+    <!-- /.end body -->
+
+</html>

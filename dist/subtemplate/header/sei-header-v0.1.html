@@ -1,0 +1,131 @@
+<!-- loader -->
+<section class="main-loaderContainer"></section>
+
+<!-- 1-sei-header -->
+<header id="header" class="hide-for-small-only">
+
+    <section class="top-bar top-line">
+
+        <!-- top bar content -->
+        <div class="top-bar__content">
+
+            <!-- top bar left -->
+            <div class="top-bar__left hide-for-small-only">
+                <!-- top bar left content -->
+                <div class="top-bar__left-content">
+                    <!-- despacho -->
+                    <div class="top-bar__left-promise despacho">
+                        <!-- title -->
+                        <h6 class="top-bar__left-title">
+                            Despacho Gratis sobre $45.000(*)
+                        </h6>
+                    </div>
+
+                    <!-- compra segura -->
+                    <div class="top-bar__left-promise compra-segura">
+                        <!-- title -->
+                        <h6 class="top-bar__left-title">
+                            Compra Segura
+                        </h6>
+                    </div>
+
+                    <!-- cambios sin costo -->
+                    <div class="top-bar__left-promise cambios">
+                        <!-- title -->
+                        <h6 class="top-bar__left-title">
+                            Cambios sin costo
+                        </h6>
+                    </div>
+                </div>
+                <!-- /.end top bar left content -->
+            </div>
+            <!-- /.fin top bar left -->
+
+            <!-- top bar right -->
+            <div class="top-bar__right">
+
+                <!-- info-sei container -->
+                <div class="info-sei-container">
+
+                    <ul class="dropdown menu" data-dropdown-menu="">
+                        <li class="nuestras-tiendas">
+                            <a class="top-menu_title" href="/Tiendas">
+                                <i class="icon-sei_tiendas" aria-hidden="true"></i>
+                                <p>Tiendas</p>
+                            </a>
+                        </li>
+                        <li class="usuario">
+                            <a class="top-menu_title" href="#">
+                                <i class="icon-sei_account" aria-hidden="true"></i>
+                                <p>Mi Cuenta</p>
+                            </a>
+                            <ul class="menu">
+                                <li class="cuenta">
+                                    <a href="/Account">
+                                        <i class="icon-sei_account" aria-hidden="true"></i>
+                                        <p>Mi Cuenta</p>
+                                    </a>
+                                </li>
+                                <li class="favoritos">
+                                    <a href="/Giftlist/Manage/">
+                                        <i class="icon-sei_whishlist" aria-hidden="true"></i>
+                                        <p>Mis Favoritos</p>
+                                    </a>
+                                </li>
+                                <li class="pedidos">
+                                    <a href="/Account/Orders">
+                                        <i class="icon-sei_box" aria-hidden="true"></i>
+                                        <p>Mis pedidos</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- /.fin info sei container -->
+            </div>
+            <!-- /.fin top bar right -->
+
+        </div>
+        <!-- /.fin top bar content -->
+
+    </section>
+    <!-- ./fin top bar -->
+
+    <!-- middle bar -->
+    <div class="middle-container">
+
+        <div class="middle-container__content">
+
+            <!-- search bar -->
+            <div class="middle-container__content-search">
+                <vtex.cmc:fullTextSearchBox/>
+            </div>
+            <!-- /.fin  search bar -->
+
+            <!-- logo -->
+            <div class="middle-container__content-logo">
+                <a href="/" title="SEI">
+                    <i class="icon-sei_logo" aria-hidden="true"></i>
+                </a>
+            </div>
+            <!-- /.fin logo -->
+
+            <!-- carrito -->
+            <div class="middle-container__content-cart">
+                <a href="/checkout/" title="Carro de compras">
+                    <i class="icon-sei_shoppingbag" aria-hidden="true"></i>
+                    <vtex.cmc:AmountItemsInCart/>
+                    <vtex.cmc:miniCart/>
+                </a>
+            </div>
+            <!-- /.fin carrito -->
+
+        </div>
+        <!-- /.fin middle bar content -->
+
+    </div>
+    <!-- /.fin middle bar container -->
+
+</header>

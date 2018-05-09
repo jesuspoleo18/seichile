@@ -2,9 +2,9 @@
 
 [Script - principal ]
 
-Projecto:  SEI  - 2017
-Version: 0.0.0
-Ultimo cambio: 2018/05/04 | 16:46 pm
+Projecto:  SEI  - 2018
+Version: 0.0.1
+Ultimo cambio: 2018/05/09 | 13:06 pm
 Asignado a: Implementacion
 Primary use: Ecommerce
 
@@ -43,6 +43,7 @@ function init() {
     home.init();
     producto.init();
     account.init();
+    categDepto.init();
 }
 
 // 2.Controles generales.
@@ -716,6 +717,27 @@ var producto = {
 
     }
 
+};
+
+// 5.Controles de depto y categ.
+
+var categDepto = {
+    init: function(){
+        var $accepted = $(".categoria");
+        if($accepted.length){
+            categDepto.findGiftIdeas();
+            console.log("control de categDepto cargado");
+        }
+    },
+    findGiftIdeas: function(){
+        var template = '<h3 class="Hide HideRango-de-Precio">Para una Mujer</h3> <ul class="Rango de Precio "> <li> <a href="/De%20Estilo%20Étnico?PS=20&amp;map=c,specificationFilter_28" class="Widemenu__menu-items hasFlag">De estilo étnico</a> </li> <li> <a href="/Versátil%20y%20Dinámica?PS=20&amp;map=c,specificationFilter_28" class="Widemenu__menu-items">Vérsatil y dinámica</a> </li> <li> <a href="/Romántica?PS=20&amp;map=c,specificationFilter_28" class="Widemenu__menu-items">Romantica</a> </li> <li> <a href="/Glamorosa?PS=20&amp;map=c,specificationFilter_28" class="Widemenu__menu-items">Glamorosa</a> </li> <li> <a href="/Clásica?PS=20&amp;map=c,specificationFilter_28" class="Widemenu__menu-items">Clásica</a> </li> </ul> <h3 class="Hide HideRango-de-Precio"> Rango de Precio </h3> <ul class="Rango de Precio "> <li> <a href="/ideas-de-regalo/de-0-a-12990?PS=20&amp;map=c,priceFrom" title="hasta $12.990">hasta $12.990 (168)</a> </li> <li> <a href="/ideas-de-regalo/de-13000-a-24990?PS=20&amp;map=c,priceFrom" title="hasta $24.990">hasta $24.990 (16)</a> </li> <li class="last"> <a href="/ideas-de-regalo/de-25000-a-36990?PS=20&amp;map=c,priceFrom" title="hasta $36.990">hasta $36.990 (125)</a> </li> </ul>';
+        var $locationPathname = window.location.pathname;
+        var $searchNavigator = $(".search-single-navigator");
+
+        if($locationPathname == '/ideas-de-regalo'){
+            $searchNavigator.append(template);
+        }
+    }
 };
 
 //WISHLIST - CREATE 

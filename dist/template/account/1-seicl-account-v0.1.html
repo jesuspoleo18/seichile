@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce"
+    lang="en-us">
+
+<!-- head -->
+<head>
+    <!-- title -->
+    <vtex:contentPlaceHolder id="account-title" />
+    <!-- sub template head -->
+    <vtex:template id="1-seicl-head" />
+</head>
+<!-- /.end head -->
+
+<!-- body -->
+<body>
+
+    <!-- inicio off canvas wrapper -->
+    <div class="off-canvas-wrap" data-offcanvas="">
+
+        <!-- inicio off canvas wrapper inner -->
+        <div class="inner-wrap">
+
+            <!-- header -->
+            <header id="header">
+                <vtex:template id="1-seicl-header" />
+            </header>
+            <!-- /.end header -->
+
+            <!-- navigation -->
+            <nav>
+                <vtex:template id="1-seicl-navigator" />
+            </nav>
+            <!-- /.end navigation -->
+
+            <!-- main -->
+            <main>
+
+                <!-- main container -->
+                <section id="account" class="main-section container">
+
+                    <!-- Account -->
+                    <div class="main-account-content">
+
+                        <div id="sectionAccount" class="sectionAccount_welcome">
+                            <vtex.cmc:welcomeMessage/>
+                        </div>
+                        <div class="sectionAccount_profileUser">
+                            <vtex.cmc:accountUserProfile />
+                        </div>
+                        <div class="sectionAccount_addressUser">
+                            <vtex.cmc:accountAddress/>
+                        </div>
+                        <div class="sectionAccount_ordersUser end">
+                            <vtex:contentPlaceHolder id="Link Mis Pedidos" />
+                        </div>
+
+                    </div>
+                    <!-- /.fin Account -->
+
+                </section>
+
+            </main>
+            <!-- end .container -->
+
+            <div id="AddressNew" class="large reveal wrapFormAddressNew" data-reveal="">
+                <form id="formAddressNew" class="grid-x grid-padding-x" method="POST">
+
+                    <h3 class="small-12 cell akhBold">Dirección</h3>
+
+                    <div class="small-12 medium-6 large-6 cell">
+                        <label class="akhBold">Identificación Dirección *</label>
+                        <input class="akhLight" type="text" name="aliasDireccion" id="aliasDireccion" pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{2,30}$" title="Ej: Mi Casa"
+                            placeholder="Ingrese su nombre (alias) de dirección" value="" required="required" autocomplete="off"
+                        />
+                        <div class="requirements akhLight">
+                            Debes ingresar un parametro válido.
+                        </div>
+                    </div>
+
+                    <div class="small-12 medium-6 large-6 cell">
+                        <label class="akhBold">Destinatario *</label>
+                        <input class="akhLight" type="text" name="destinatario" id="destinatario" pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{2,30}$" title="Ej: Carlos Tapia"
+                            placeholder="Ingrese un destinatario" value="" required="required" autocomplete="off" />
+                        <div class="requirements akhLight">
+                            Debes ingresar un parametro válido.
+                        </div>
+                    </div>
+
+                    <div class="small-12 medium-6 large-6 cell">
+                        <label class="akhBold">Calle *</label>
+                        <input class="akhLight" type="text" name="direccion" id="direccion" pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,20}$" title="Ej: San Francisco"
+                            placeholder="Ingrese su calle" value="" required="required" autocomplete="off" />
+                        <div class="requirements akhLight">
+                            Debes ingresar un parametro válido.
+                        </div>
+                    </div>
+
+                    <div class="small-6 medium-3 large-3 cell">
+                        <label class="akhBold">Número *</label>
+                        <input class="akhLight" type="text" name="numeroDireccion" id="numeroDireccion" pattern="^[\d-]{1,6}$" maxlength="11" title="Ej: 4687"
+                            placeholder="Ingrese su número" value="" required="required" autocomplete="off" />
+                        <div class="requirements akhLight">
+                            Debes ingresar un parametro válido.
+                        </div>
+                    </div>
+
+                    <div class="small-6 medium-3 large-3 cell">
+                        <label class="akhBold">Piso/Depto/Casa *</label>
+                        <input class="akhLight" type="text" name="pisoDireccion" id="pisoDireccion" pattern="[a-zA-Z0-9\s]+" maxlength="11" title="Ej: 302"
+                            placeholder="Ingrese su piso o departamento" value="" required="required" autocomplete="off" />
+                        <div class="requirements akhLight">
+                            Debes ingresar un parametro válido.
+                        </div>
+                    </div>
+
+                    <div class="small-12 medium-6 large-6 cell">
+                        <label class="akhBold">Región *</label>
+                        <select id="cmbRegion" class="akhLight" required="required"></select>
+                        <div class="requirements akhLight">
+                            Debes ingresar un parametro válido.
+                        </div>
+                    </div>
+
+                    <div class="small-12 medium-6 large-6 cell">
+                        <label class="akhBold">Comuna *</label>
+                        <select id="cmbComuna" class="akhLight" required="required"></select>
+                        <div class="requirements akhLight">
+                            Debes ingresar un parametro válido.
+                        </div>
+                    </div>
+
+                    <small class="msjForces akhLight">
+                        * campos obligatorios
+                    </small>
+
+                    <div class="small-12 columns hide">
+                        <span id="spnNombreComuna"> </span>
+                    </div>
+
+                    <div class="small-12 columns">
+                        <button type="submit" class="addressSubmit button">Guardar Datos</button>
+                        <button class="btnCancel button" data-close="" aria-label="Close reveal">Cancelar</button>
+                    </div>
+
+                    <button class="close-button" data-close="" aria-label="Close modal" type="button">
+                        <span aria-hidden="true">X</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div id="addressError" class="small reveal" data-reveal="" aria-labelledby="addressErrorTitle" aria-hidden="true" role="dialog"
+                data-reveal-ajax="true">
+                <h2 id="addressErrorTitle" class="akhBold">Error en el envío de tus datos</h2>
+                <p class="akhLight">Prueba completando nuevamente todos los campos correspondientes de forma correcta.</p>
+                <p class="akhLight">De lo contrario revisa su conexión a internet o inténtelo más tarde.</p>
+                <button class="close-button" data-close="" aria-label="Close reveal" type="button">
+                    <span aria-hidden="true">x</span>
+                </button>
+            </div>
+
+            <div id="addressAprob" class="tiny reveal" data-reveal="" aria-labelledby="addressAprobTitle" aria-hidden="true" role="dialog"
+                data-reveal-ajax="true">
+                <h2 id="addressAprobTitle" class="archdt">¡Sus datos han sido guardados!</h2>
+                <button class="close-button" data-close="" aria-label="Close reveal" type="button">
+                    <span aria-hidden="true">x</span>
+                </button>
+            </div>
+
+            <div id="addressDelete" class="tiny reveal" data-reveal="" aria-labelledby="addressDeleteTitle" aria-hidden="true" role="dialog"
+                data-reveal-ajax="true">
+                <h2 id="addressDeleteTitle" class="akhBold">Su direccion ha sido eliminada correctamente.</h2>
+                <button class="close-button" data-close="" aria-label="Close reveal" type="button">
+                    <span aria-hidden="true">x</span>
+                </button>
+            </div>
+            
+            <!-- footer -->
+            <footer>
+                <vtex:template id="1-seicl-footer" />
+            </footer>
+            <!-- /.end footer -->
+            
+            <!-- back to top -->
+            <a href="#0" class="back-to-top back-to-top-is-visible"></a>
+
+        </div>
+        <!-- /.end inicio off canvas wrapper inner -->
+
+    </div>
+    <!-- /.end inicio off canvas wrapper -->
+
+</body>
+<!-- /.end body -->
+
+</html>

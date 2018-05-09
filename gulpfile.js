@@ -68,7 +68,7 @@ gulp.task("compileCSS", function () {
 
 // img opti
 gulp.task('optiImg', function () {
-    return gulp.src('dist/assets/img/originales/*')
+    return gulp.src('dist/assets/img/originales/para-opti/*')
         // .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
         .pipe(imagemin([
             imageminMozjpeg({
