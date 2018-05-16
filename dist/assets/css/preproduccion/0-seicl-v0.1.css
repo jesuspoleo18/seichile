@@ -4,7 +4,7 @@
 
 Projecto:  SEI - 2018
 Version: 0.0.1
-Ultimo cambio: 2018-05-16 | 16:50 pm
+Ultimo cambio: 2018-05-16 | 17:19 pm
 Asignado a: Implementacion.
 Primary use: Ecommerce. 
 
@@ -5798,6 +5798,20 @@ p.osw-content,
     #tiendas {
         margin: 1rem auto;
         width: 90%;
+    }
+    .store__content {
+        flex-flow: wrap;
+    }
+    .store__results {
+        width: 100%;
+    }
+    .store__info {
+        margin-top: 2rem;
+        padding: 0;
+        width: 100%;
+    }
+    .firstHeading {
+        font-size: 1.4rem;
     }
 }
 
