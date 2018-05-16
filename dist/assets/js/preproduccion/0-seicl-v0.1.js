@@ -4,7 +4,7 @@
 
 Projecto:  SEI  - 2018
 Version: 0.0.1
-Ultimo cambio: 2018/05/15 | 17:26 pm
+Ultimo cambio: 2018/05/16 | 13:12 pm
 Asignado a: Implementacion
 Primary use: Ecommerce
 
@@ -559,6 +559,14 @@ var producto = {
             producto.qtdControl();
             producto.sizeNecessary();
             producto.skuOnChange();
+            producto.noStock();
+            producto.checkForSkus();
+        }
+    },
+    checkForSkus: function(){
+        let $input = $(".product__tallas").find('input');
+        if($input.length == 0){
+            $(".product__tallas").remove();
         }
     },
     noStock: function () {

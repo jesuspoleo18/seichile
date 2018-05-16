@@ -4,7 +4,7 @@
 
 Projecto:  SEI - 2018
 Version: 0.0.1
-Ultimo cambio: 2018-05-16 | 12:49 am
+Ultimo cambio: 2018-05-16 | 13:09 am
 Asignado a: Implementacion.
 Primary use: Ecommerce. 
 
@@ -2913,7 +2913,6 @@ p {
     color: #1E1B1C;
     font-family: 'Dosis', sans-serif;
     font-size: 1.5rem;
-    font-weight: 600;
     padding: 0;
     margin: 0;
     right: 0;
@@ -2995,16 +2994,31 @@ p {
 }
 
 .home-coleccion .banner-collecion.video {
+    margin-bottom: 2rem;
     width: 65%;
 }
 
 .home-coleccion .banner-collecion.video iframe {
     width: 100%;
-    height: 35rem;
+    height: 567px;
 }
 
 .home-coleccion .banner-collecion.foto-1 {
+    display: block;
+    height: 567px;
+    margin-bottom: 2rem;
+    position: relative;
     width: 30%;
+}
+
+.home-coleccion .banner-collecion.foto-1 a,
+.home-coleccion .banner-collecion.foto-1 img {
+    height: 100%;
+    width: 100%;
+}
+
+.home-coleccion .banner-collecion.foto-1 img {
+    object-fit: cover;
 }
 
 .home-coleccion .banner-collecion.foto-2 {
@@ -3012,8 +3026,8 @@ p {
 }
 
 .home-coleccion .banner-collecion.foto-3 {
-    margin-top: 2rem;
-    width: 55%;
+    margin-top: 0;
+    width: 60%;
 }
 
 .home-coleccion .banner-collecion .post-image-hover {
@@ -3855,8 +3869,9 @@ form#formAddressNew button.close-button:before {
     font-family: 'Dosis', sans-serif;
     width: 40%;
     display: flex;
-    flex-flow: wrap;
-    align-items: center;
+    flex-direction: column;
+    /*     flex-flow: wrap; */
+    /*     align-items: center; */
     justify-content: flex-start;
 }
 
