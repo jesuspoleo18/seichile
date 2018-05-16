@@ -4,7 +4,7 @@
 
 Projecto:  SEI - 2018
 Version: 0.0.1
-Ultimo cambio: 2018-05-16 | 15:34 pm
+Ultimo cambio: 2018-05-16 | 15:55 pm
 Asignado a: Implementacion.
 Primary use: Ecommerce. 
 
@@ -1948,17 +1948,15 @@ p {
 */
 
 .searchResultsTime {
-    display: -webkit-inline-box;
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
     height: 2.5rem;
-    box-align: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
+    margin: 0;
+    width: 50%;
+    display: flex;
     align-items: center;
-    margin: 0
+}
+
+.resultado-busca-numero {
+    padding-left: 1rem;
 }
 
 .searchResultsTime .resultado-busca-tempo,
@@ -1984,17 +1982,10 @@ p {
 /* Filtro Order -Item ================================*/
 
 .sub {
-    display: -webkit-inline-box;
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    float: right;
-    box-align: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
+    width: 50%;
+    display: flex;
     align-items: center;
-    white-space: nowrap;
+    justify-content: flex-end;
 }
 
 .sub .resultado-busca-filtro .compare {
@@ -2164,19 +2155,28 @@ p {
         height: auto;
         margin-bottom: 1rem;
     }
+    .sub .resultado-busca-filtro {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .sub {
+        padding: 0 .5rem;
+    }
     .sub .resultado-busca-filtro fieldset.orderBy {
-        width: 48%;
+        width: 45%;
     }
     .sub .resultado-busca-filtro fieldset.orderBy label {
         font-size: .8rem;
         display: block;
     }
     .sub .resultado-busca-filtro fieldset.orderBy select {
-        width: 100%;
         font-size: .8rem;
+        margin-top: .2rem;
+        width: 100%;
     }
     .sub .resultado-busca-filtro fieldset.filterBy {
-        width: 48%;
+        width: 45%;
         font-size: .8rem;
         margin-left: 0;
     }
@@ -2184,6 +2184,10 @@ p {
         display: block;
         font-size: .8rem;
         width: 100%;
+    }
+    .searchResultsTime {
+        width: 100%;
+        justify-content: center;
     }
 }
 
@@ -4932,8 +4936,8 @@ h4.group.Atributos {
 
 .Depto__content .Depto__content--filtroBtnMobile {
     background: #ee5d79;
-    margin-top: 1rem;
-    padding: .35rem;
+    margin-top: 0;
+    padding: .7rem;
     width: 100%;
 }
 
@@ -4949,6 +4953,14 @@ h4.group.Atributos {
     width: 100%;
 }
 
+.departamento .main,
+.categoria .main {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+}
+
 /* 
     [f11.Mediaquerie departamento] 
 */
@@ -4959,7 +4971,7 @@ h4.group.Atributos {
     }
     .Depto__content {
         margin: 0 auto;
-        width: 90%;
+        width: 100%;
     }
     .Depto__content .Depto__content--aside {
         display: none;
