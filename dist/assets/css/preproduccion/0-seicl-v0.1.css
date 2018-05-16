@@ -4,7 +4,7 @@
 
 Projecto:  SEI - 2018
 Version: 0.0.1
-Ultimo cambio: 2018-05-16 | 18:48 pm
+Ultimo cambio: 2018-05-16 | 19:25 pm
 Asignado a: Implementacion.
 Primary use: Ecommerce. 
 
@@ -5071,7 +5071,8 @@ h4.group.Atributos {
 }
 
 .departamento .main,
-.categoria .main {
+.categoria .main,
+.resultado-busca .main {
     position: relative;
     width: 100%;
     display: flex;
