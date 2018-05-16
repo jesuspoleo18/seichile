@@ -572,8 +572,11 @@ var producto = {
     noStock: function () {
         let $a = $(".buy-button.buy-button-ref");
         let $body = $("body");
+        let $ref = $(".product__ean");
+        let template = '<p class="product__no-stock">Producto no disponible</p>';
         if ($a.css('display') == 'none') {
             $body.addClass('no-stock');
+            $ref.after(template);
             return true;
         } else {
             $body.removeClass('no-stock');

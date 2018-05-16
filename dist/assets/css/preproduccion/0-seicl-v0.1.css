@@ -4,7 +4,7 @@
 
 Projecto:  SEI - 2018
 Version: 0.0.1
-Ultimo cambio: 2018-05-16 | 13:09 am
+Ultimo cambio: 2018-05-16 | 13:37 pm
 Asignado a: Implementacion.
 Primary use: Ecommerce. 
 
@@ -781,10 +781,19 @@ p {
 .footer-newsletter__content--formulario input#newsletter_submit {
     background: none;
     border: 2px solid #191919;
+    cursor: pointer;
     font-family: 'Dosis', sans-serif;
     font-weight: 700;
     height: 100%;
     width: 20%;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+}
+
+.footer-newsletter__content--formulario input#newsletter_submit:hover {
+    border: none;
+    background-color: #EE5D79;
+    color: white;
 }
 
 /*Info =====================================================*/
@@ -4174,6 +4183,7 @@ label.dimension-Talla-medidas.item_unavaliable.item_unavailable.disabled {
     width: 100%;
     display: flex;
     margin: 2rem 0;
+    margin-bottom: .8rem;
 }
 
 /*QTD*/
@@ -4213,7 +4223,8 @@ label.dimension-Talla-medidas.item_unavaliable.item_unavailable.disabled {
 /*Giftlist*/
 
 .product__wishlist-container {
-    width: 30%;
+    margin-bottom: 1.5rem;
+    width: 40%;
     display: inline-block;
 }
 
@@ -4224,7 +4235,7 @@ label.dimension-Talla-medidas.item_unavaliable.item_unavailable.disabled {
 .product__wishlist-content .glis-popup-link.tb-added {
     border: 1px solid #ee5d79;
     color: #ee5d79;
-    margin-left: .5rem;
+    margin-left: 0;
     font-size: 0;
     padding: .65rem .5rem;
     display: flex;
@@ -4578,12 +4589,25 @@ label.dimension-Talla-medidas.item_unavaliable.item_unavailable.disabled {
     width: 65%;
 }
 
+.product__no-stock {
+    display: none;
+    /*     color:#A20B28; */
+    color: #555;
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
 .no-stock .product__shop-container,
 .no-stock .product__shop-container,
-.product__wishlist-container,
+.no-stock .product__wishlist-container,
 h4.group.Atributos-Raiz,
 h4.group.Atributos {
     display: none;
+}
+
+.no-stock .product__no-stock {
+    display: block;
 }
 
 #caracteristicas {
@@ -4692,6 +4716,10 @@ h4.group.Atributos {
     .giftlist-insertsku .glis-create {
         width: 100%;
         margin-bottom: 1rem
+    }
+    .product__no-stock {
+        text-align: center;
+        margin-bottom: 0;
     }
 }
 
