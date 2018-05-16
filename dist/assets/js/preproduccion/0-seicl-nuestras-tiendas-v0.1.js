@@ -38,8 +38,8 @@ function loadScript() {
         $results = $(".store__results"),
         pais = '';
 
-    $(".produto .dimension-Color").css("color", "#" + color);
-    $(".produto .dimension-Color").css("background", "#" + color);
+    // $(".produto .dimension-Color").css("color", "#" + color);
+    // $(".produto .dimension-Color").css("background", "#" + color);
 
     script.type = 'text/javascript';
     script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDzzSgYRacD6Rzn9EmHMPGD3gdZljh0tpk&sensor=false' + '&callback=initialize';
@@ -63,6 +63,10 @@ function loadScript() {
         // getMarkersByCountry(pais);
         getCities(pais);
     });
+
+    if ($('#ciudad').val() == null) {
+        $results.fadeOut();
+    }
 
     $('#ciudad').on('change', function () {
 
