@@ -72,7 +72,7 @@ var confiGenerales = {
         });
 
     },
-    miniCartHover: function() {
+    miniCartHover: function () {
         let $noSticky = $(".middle-container__content-cart");
         let $sticky = $(".megamenu-container__content-cart");
         $noSticky.hover(function () {
@@ -228,7 +228,7 @@ var confiGenerales = {
 
         var $ajaxStopElems = '.skuListPrice, .skuBestPrice, .bestPrice, .oldPrice, .price-best-price, .skuBestInstallmentValue, em.total-cart-em, span.vtexsc-text, td.monetary, span.best-price.new-product-price, td.quantity-price.hidden-phone.hidden-tablet,span.payment-value-monetary,span.payment-installments, .producto-prateleira__info--bestPrice div, .producto-prateleira__info--oldPrice div, .giftlistproductsv2 td';
         var $porcentaje = $('.porcentaje');
-        var porcentaje = function(el) {
+        var porcentaje = function (el) {
             $(el).each(function () {
                 var valor = $(this).text();
                 if (valor == 0) {
@@ -563,9 +563,9 @@ var producto = {
             producto.checkForSkus();
         }
     },
-    checkForSkus: function(){
+    checkForSkus: function () {
         let $input = $(".product__tallas").find('input');
-        if($input.length == 0){
+        if ($input.length == 0) {
             $(".product__tallas").remove();
         }
     },
@@ -595,97 +595,48 @@ var producto = {
         });
     },
     qtdControl: function () {
-        var $btnComprarProduto = $('.buy-button.buy-button-ref'),
-            $notifyme = $(this).find(".notifyme.sku-notifyme:visible"),
-            qty = {
-                cantidad: ""
-            };
+
+        var $btnComprarProduto = $('.buy-button.buy-button-ref');
+        var $notifyme = $(this).find(".notifyme.sku-notifyme:visible");
+        var $templateQty = '<div class="pull-left box-qtd">' + '<div class="bts pull-right">' + '<button class="btn btn-mais">+</button>' + '</div>' + '<input type="text" class="qtd pull-left" value="1" />' + '<div class="bts pull-left">' + '<button class="btn btn-menos">-</button>' + '</div>' + '</div>';
+        var $recebeQtyForm = $('.product__sku-container, .product__shop-content');
+        var amountProduct;
+
         if ($btnComprarProduto.length) {
-
-            var $recebeQtyForm = $btnComprarProduto.parents('.product__shop-content');
-
             if ($recebeQtyForm.length) {
-
                 vtexjs.catalog.getCurrentProductWithVariations().done(function (product) {
-
-                    qty.cantidad = product.skus[0].availablequantity;
-
+                    amountProduct = product.skus[0].availablequantity;
                 });
+                $recebeQtyForm.prepend($templateQty);
+            }
+        }
+        producto.assignQtd(amountProduct);
+    },
+    assignQtd: function (qty) {
+        var $document = $(document);
+        $document.on('click', '.product__shop-content .box-qtd .btn', function () {
 
-                $recebeQtyForm.prepend(
+            var $this = $(this);
+            var $qtd = $('.product__shop-content .box-qtd .qtd');
+            var valor = parseInt($qtd.val());
 
-                    '<div class="pull-left box-qtd">' +
-                    '<div class="bts pull-right">' +
-                    '       <button class="btn btn-mais">+</button>' +
-                    '   </div>' +
-                    '   <input type="text" class="qtd pull-left" value="1" />' +
-                    '   <div class="bts pull-left">' +
-                    '       <button class="btn btn-menos">-</button>' +
-                    '   </div>' +
-                    '</div>'
-                );
+            if ($this.hasClass('btn-mais')) {
+                $qtd.val(valor + 1);
+                if (parseInt($('.product__shop-content .box-qtd .qtd').val()) === qty) {
+                    console.log("tope de cantidad");
+                    $(".btn-mais").prop('disabled', true);
+                } else {
+                    console.log("no se está ejecutando el anterior");
+                }
 
-                $(document).on('keypress', '.product__shop-content .box-qtd .qtd', function (e) {
-
-                    var tecla = (window.event) ? event.keyCode : e.which;
-                    if ((tecla > 47 && tecla < 58)) {
-                        return true;
-                    } else {
-                        if (tecla == 8 || tecla == 0) {
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    }
-                });
-
-                $(document).on('keyup', '.product__shop-content .box-qtd .qtd', function (e) {
-
-                    $('.product__shop-content .box-qtd .qtd').val($(this).val());
-                });
-
-                $(document).on('blur', '.product__shop-content .box-qtd .qtd', function (e) {
-
-                    var $this = $(this);
-
-                    if ($this.val() === '' || parseInt($this.val()) < 1) {
-                        $('.product__shop-content .box-qtd .qtd').val(1);
-                    } else {
-                        $('.product__shop-content .box-qtd .qtd').val($this.val());
-                    }
-
-                });
-
-                $(document).on('click', '.product__shop-content .box-qtd .btn', function () {
-
-                    var $this = $(this),
-                        $qtd = $('.product__shop-content .box-qtd .qtd'),
-                        valor = parseInt($qtd.val());
-
-                    if ($this.hasClass('btn-mais')) {
-
-                        $qtd.val(valor + 1);
-
-                        if (parseInt($('.product__shop-content .box-qtd .qtd').val()) === qty.cantidad) {
-                            console.log("tope de cantidad");
-                            $(".btn-mais").prop('disabled', true);
-                        } else {
-                            console.log("no se está ejecutando el anterior");
-                        }
-
-                    } else if ($this.hasClass('btn-menos')) {
-
-                        if (valor > 1) {
-                            $qtd.val(valor - 1);
-                            $(".btn-mais").removeAttr('disabled');
-                        }
-                    }
-
-                });
-
+            } else if ($this.hasClass('btn-menos')) {
+                if (valor > 1) {
+                    $qtd.val(valor - 1);
+                    $(".btn-mais").removeAttr('disabled');
+                }
             }
 
-        }
+        });
     },
     sizeNecessary: function () {
         $(".buy-button.buy-button-ref").click(function () {
@@ -745,19 +696,19 @@ var producto = {
 
 // 5.Controles de depto y categ.
 var categDepto = {
-    init: function(){
+    init: function () {
         var $accepted = $(".categoria");
-        if($accepted.length){
+        if ($accepted.length) {
             categDepto.findGiftIdeas();
             console.log("control de categDepto cargado");
         }
     },
-    findGiftIdeas: function(){
+    findGiftIdeas: function () {
         var template = '<h3 class="Hide HideRango-de-Precio">Para una Mujer</h3> <ul class="Rango de Precio "> <li> <a href="/De%20Estilo%20Étnico?PS=20&amp;map=c,specificationFilter_28" class="Widemenu__menu-items hasFlag">De estilo étnico</a> </li> <li> <a href="/Versátil%20y%20Dinámica?PS=20&amp;map=c,specificationFilter_28" class="Widemenu__menu-items">Vérsatil y dinámica</a> </li> <li> <a href="/Romántica?PS=20&amp;map=c,specificationFilter_28" class="Widemenu__menu-items">Romantica</a> </li> <li> <a href="/Glamorosa?PS=20&amp;map=c,specificationFilter_28" class="Widemenu__menu-items">Glamorosa</a> </li> <li> <a href="/Clásica?PS=20&amp;map=c,specificationFilter_28" class="Widemenu__menu-items">Clásica</a> </li> </ul> <h3 class="Hide HideRango-de-Precio"> Rango de Precio </h3> <ul class="Rango de Precio "> <li> <a href="/ideas-de-regalo/de-0-a-12990?PS=20&amp;map=c,priceFrom" title="hasta $12.990">hasta $12.990 (168)</a> </li> <li> <a href="/ideas-de-regalo/de-13000-a-24990?PS=20&amp;map=c,priceFrom" title="hasta $24.990">hasta $24.990 (16)</a> </li> <li class="last"> <a href="/ideas-de-regalo/de-25000-a-36990?PS=20&amp;map=c,priceFrom" title="hasta $36.990">hasta $36.990 (125)</a> </li> </ul>';
         var $locationPathname = window.location.pathname;
         var $searchNavigator = $(".search-single-navigator");
 
-        if($locationPathname == '/ideas-de-regalo'){
+        if ($locationPathname == '/ideas-de-regalo') {
             $searchNavigator.append(template);
         }
     }
