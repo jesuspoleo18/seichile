@@ -4,7 +4,7 @@
 
 Projecto:  SEI - 2018
 Version: 0.0.1
-Ultimo cambio: 2018-05-16 | 16:42 pm
+Ultimo cambio: 2018-05-16 | 16:50 pm
 Asignado a: Implementacion.
 Primary use: Ecommerce. 
 
@@ -4339,6 +4339,7 @@ label.dimension-Talla-medidas.item_unavaliable.item_unavailable.disabled {
     border-radius: 0;
     text-align: center;
     margin: 0 auto;
+    width: 40%;
 }
 
 /*Price*/
@@ -4931,6 +4932,9 @@ h4.group.Atributos {
     }
     .product__bottom-side h3 {
         margin-bottom: 2rem;
+    }
+    .swal2-confirm.swal2-styled {
+        width: 80%;
     }
 }
 

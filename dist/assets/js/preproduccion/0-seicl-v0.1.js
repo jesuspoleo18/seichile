@@ -4,7 +4,7 @@
 
 Projecto:  SEI  - 2018
 Version: 0.0.1
-Ultimo cambio: 2018/05/16 | 14:45 pm
+Ultimo cambio: 2018/05/16 | 16:49 pm
 Asignado a: Implementacion
 Primary use: Ecommerce
 
@@ -660,11 +660,10 @@ var producto = {
                 vtexjs.checkout.addToCart([item], null, 1).done(function (orderForm) {
 
                     swal({
-                        html: "PRODUCTO AÑADIDO CON ÉXITO.",
+                        html: "Producto añadido con éxito.",
                         type: 'success',
-                        confirmButtonColor: '#182b5b',
-                        confirmButtonText: 'Volver al sitio',
-                        timer: 2000
+                        confirmButtonColor: '#EE5D79',
+                        confirmButtonText: 'Volver al sitio'
                     });
 
                     $(".portal-minicart-ref .cartFooter a").attr("href", "/checkout/#/cart");
