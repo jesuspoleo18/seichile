@@ -4,7 +4,7 @@
 
 Projecto:  SEI - 2018
 Version: 0.0.1
-Ultimo cambio: 2018-05-16 | 17:19 pm
+Ultimo cambio: 2018-05-16 | 18:48 pm
 Asignado a: Implementacion.
 Primary use: Ecommerce. 
 
@@ -5839,4 +5839,21 @@ p.osw-content,
     font-size: 1.5rem;
     line-height: 1;
     margin: 0 0 0.8rem 0;
+}
+
+.matriz-despacho {
+    margin-top: 2rem;
+}
+
+@media only screen and (max-width: 40em) {
+    .matriz-despacho tbody {
+        display: flex;
+        flex-flow: wrap;
+    }
+    .matriz-despacho tbody tr {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

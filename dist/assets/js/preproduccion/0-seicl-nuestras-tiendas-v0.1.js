@@ -539,8 +539,8 @@ function getAllData() {
                         'Mall Plaza Antofagasta': {
                             lat: -23.6460605,
                             lng: -70.4030107,
-                            address: 'Av. Balmaceda 2337 Local 162 , Antofagasta',
-                            phone: '(+56 55 2533214)',
+                            address: 'Av. Balmaceda 2337 L° 162, Antofagasta',
+                            phone: '9 980 11756'
                             //schedules: 'Lunes a Domingo:'
                         }
                     }
@@ -553,7 +553,78 @@ function getAllData() {
                             lat: -22.4497402,
                             lng: -68.92372,
                             address: 'Av. Balmaceda 3242, Local B-149, Calama',
-                            //phone: '(+56 2)',
+                            phone: '9 980 11307'
+                            //schedules: 'Lunes a Domingo:'
+                        }
+                    }
+                },
+                Chillán: {
+                    lat: '-36.6099335',
+                    lng: '-72.1018979',
+                    stores: {
+                        'Mall Arauco Chillán': {
+                            lat: -36.6094189,
+                            lng: -72.1027439,
+                            address: 'El Roble 770 L° 122, Chillán',
+                            phone: '9 980 11828',
+                            email:'chillan@sei.cl'
+                            //schedules: 'Lunes a Domingo:' 
+                        }
+                    }
+                },
+                Copiapó: {
+                    lat: '-27.3683877',
+                    lng: '-70.3397467',
+                    stores: {
+                        'Mall Plaza Copiapó': {
+                            lat: -27.3705101,
+                            lng: -70.3414024,
+                            address: 'Maipú 0110 L° A-1077, Copiapo',
+                            phone: '52 235 6678 | 9 658 36493',
+                            email:'copiapo@sei.cl'
+                            //schedules: 'Lunes a Domingo:' 
+                        }
+                    }
+                },
+                Concepción: {
+                    lat: '-36.8222947',
+                    lng: '-73.049383',
+                    stores: {
+                        'Concepción Centro': {
+                            lat: -36.8248521,
+                            lng: -73.0473283,
+                            address: 'Barros Arana 1068 L° 07-01, Concepción',
+                            phone: '41 316 2175 | 9 880 51818',
+                            email: 'concepcion2@sei.cl'
+                            //schedules: 'Lunes a Domingo:'
+                        }
+                    }
+                },
+                Curicó: {
+                    lat: '-34.9844271',
+                    lng: '-71.242218',
+                    stores: {
+                        'Curicó': {
+                            lat: -34.9843932,
+                            lng: -71.2438494,
+                            address: 'Peña 653-a, Curicó',
+                            phone: '75 222 2309 | 9 963 27276',
+                            email:'curico@sei.cl'
+                            //schedules: 'Lunes a Domingo:'
+                        }
+                    }
+                },
+                Coquimbo: {
+                    lat: '-29.9595371',
+                    lng: '-71.3389398',
+                    stores: {
+                        'Mall Vivo': {
+                            lat: -29.9594766,
+                            lng: -71.3368242,
+                            address: 'Baquedano 86, Local 1244-1248, Coquimbo',
+                            phone: '9 975 04526 | 9 975 04526',
+                            email:'coquimbo@sei.cl'
+                            //phone: '(+56 97504526)',
                             //schedules: 'Lunes a Domingo:'
                         }
                     }
@@ -565,35 +636,10 @@ function getAllData() {
                         'Portal Temuco': {
                             lat: -38.7349423,
                             lng: -72.613005,
-                            address: 'Av Alemania 0671, Local 2067, Temuco',
-                            phone: '(+56 45 2211712)',
+                            address: 'Av. Alemania 0671 L° 2067, Temuco',
+                            phone: '45 221 1712 | 9 980 11589',
+                            email: 'temuco@sei.cl'
                             //schedules: 'Lunes a Domingo:'  
-                        }
-                    }
-                },
-                Copiapó: {
-                    lat: '-27.3683877',
-                    lng: '-70.3397467',
-                    stores: {
-                        'Mall Plaza Copiapó': {
-                            lat: -27.3705101,
-                            lng: -70.3414024,
-                            address: 'Maipú 0110, Local A-1077, Copiapó',
-                            phone: '(+56 52 2356678)',
-                            //schedules: 'Lunes a Domingo:' 
-                        }
-                    }
-                },
-                Chillán: {
-                    lat: '-36.6099335',
-                    lng: '-72.1018979',
-                    stores: {
-                        'Mall Arauco Chillán': {
-                            lat: -36.6094189,
-                            lng: -72.1027439,
-                            address: 'El Roble 770, Local 214, Chillán',
-                            phone: '(+56 42 2229380)',
-                            //schedules: 'Lunes a Domingo:' 
                         }
                     }
                 },
@@ -604,28 +650,9 @@ function getAllData() {
                         'Portal Talcahuano': {
                             lat: -36.7507253,
                             lng: -73.0951778,
-                            address: 'Avda. Colón 180, Local 2011, Talcahuano',
-                            phone: '(+56 41 2298010)',
-                            //schedules: 'Lunes a Domingo:'
-                        }
-                    }
-                },
-                Concepción: {
-                    lat: '-36.8222947',
-                    lng: '-73.049383',
-                    stores: {
-                        'Concepción Centro': {
-                            lat: -36.8248521,
-                            lng: -73.0473283,
-                            address: 'Av. Barros Arana 1068 ,Local 07 - 01, Concepción',
-                            phone: '(+56 41 3162175)',
-                            //schedules: 'Lunes a Domingo:'
-                        },
-                        'Aeropuerto Concepción': {
-                            lat: -36.7802354,
-                            lng: -73.0608969,
-                            address: 'Avda. J.Alessandri 3177, Local A121, Concepción',
-                            phone: '(+56 41 2563776)',
+                            address: 'Av. Colon 180 L° 2011, Talcahuano',
+                            phone: '41 229 8010 | 9 980 11711',
+                            email:'talcahuano@sei.cl'
                             //schedules: 'Lunes a Domingo:'
                         }
                     }
@@ -638,7 +665,8 @@ function getAllData() {
                             lat: -37.4683372,
                             lng: -72.3549975,
                             address: 'Calle Valdivia 440, Local A-310, Los Ángeles',
-                            phone: '(+56 43 2451105)',
+                            phone: '43 245 1105 | 9 500 82763',
+                            email:'losangeles@sei.cl'
                             //schedules: 'Lunes a Domingo:'
                         }
                     }
@@ -650,10 +678,11 @@ function getAllData() {
                         'Mall Plaza La Serena': {
                             lat: -29.9125806,
                             lng: -71.2604689,
-                            address: 'Avda. Alberto Solari 1400, Local A 113, La Serena',
-                            phone: '(+56 51 2471666)',
+                            address: 'Av. Alberto Solari 1400 L° A-113, La Serena',
+                            phone: '51 247 1666 | 9 980 11855',
+                            email:'laserena@sei.cl'
                             //schedules: 'Lunes a Domingo:'
-                        },
+                        }
                     }
                 },
                 Ovalle: {
@@ -663,41 +692,31 @@ function getAllData() {
                         'Open Plaza Ovalle': {
                             lat: -30.5975125,
                             lng: -71.1881082,
-                            address: 'Prolongación Benavente 1075, Local 1230, Ovalle',
-                            phone: '(+56 53 2595041)',
+                            address: 'Prolongacion Benavente 1075 L° 1230, Ovalle',
+                            phone: '53 259 5041 | 9 500 82575',
+                            email: 'ovalle@sei.cl'
                             //schedules: 'Lunes a Domingo:'
-                        },
-                    }
-                },
-                Coquimbo: {
-                    lat: '-29.9595371',
-                    lng: '-71.3389398',
-                    stores: {
-                        'Mall Vivo': {
-                            lat: -29.9594766,
-                            lng: -71.3368242,
-                            address: 'Baquedano 86, Local 1244-1248, Coquimbo',
-                            //phone: '(+56 97504526)',
-                            //schedules: 'Lunes a Domingo:'
-                        },
+                        }
                     }
                 },
                 Rancagua: {
                     lat: '-34.1631201',
                     lng: '-70.7533766',
                     stores: {
-                        'Mall Open rancagua': {
+                        'Rancagua C.': {
                             lat: -34.1690644,
                             lng: -70.7416069,
                             address: 'José Bernardo Cuevas 483, Local 118, Rancagua',
-                            phone: '(+56 72 2242761)',
+                            phone: '72 2 242761 | 9 980 11804',
+                            email: 'rancagua@sei.cl'
                             //schedules: 'Lunes a Domingo:'
                         },
-                        'Portal Rancagua': {
+                        'Rancagua P.': {
                             lat: -34.1849507,
                             lng: -70.7266552,
                             address: 'Carretera El Cobre 750, Local 1029, Rancagua',
-                            phone: '(+56 72 2210805)',
+                            phone: '72 221 0805 | 9 980 11809',
+                            email:'portal@sei.cl'
                             //schedules: 'Lunes a Domingo:'
                         }
                     }
@@ -710,9 +729,10 @@ function getAllData() {
                             lat: -34.586671,
                             lng: -70.987404,
                             address: 'Av. Bernardo O´Higgins 701, Local 1228,',
-                            phone: '(+56 229018712)',
+                            phone: '2 290 18712 | 9 877 52325',
+                            email: 'sanfernando@sei.cl'
                             //schedules: 'Lunes a Domingo:'
-                        },
+                        }
                     }
                 },
                 Osorno: {
@@ -722,8 +742,9 @@ function getAllData() {
                         'Mall Portal Osorno': {
                             lat: -40.5738537,
                             lng: -73.1325179,
-                            address: 'Plaza Yungay 609, Local 2044, Osorno',
-                            phone: '(+56 64 2244410)',
+                            address: 'Plaza Yungay 609 L° 2044, Osorno',
+                            phone: '64 224 4410 | 9 785 76296',
+                            email:'osorno@sei.cl'
                             //schedules: 'Lunes a Domingo:'
                         },
                     }
@@ -735,15 +756,17 @@ function getAllData() {
                         'Mall Paseo Costanera': {
                             lat: -41.4722624,
                             lng: -72.9386182,
-                            address: 'Illapel 10, Local 106A, Puerto Montt',
-                            phone: '(+56 65 2344390)',
+                            address: 'Illapel 10 L° 106 A, Puerto Montt',
+                            phone: '65 234 4390 | 9 769 83637',
+                            email:'puertomontt@sei.cl'
                             //schedules: 'Lunes a Domingo:'
                         },
                         'Paseo del Mar': {
                             lat: -41.4717265,
                             lng: -72.9453413,
-                            address: 'Urmeneta 580, Local 212, Puerto Montt',
-                            phone: '(+56 65 2314863)',
+                            address: 'Urmeneta 580 L° 212, Puerto Montt',
+                            phone: '65 231 4863 | 9 954 37437',
+                            email:'puertomontt2@sei.cl'
                             //schedules: 'Lunes a Domingo:'
                         }
                     }
@@ -755,7 +778,9 @@ function getAllData() {
                         'Mall Paseo Puerto Varas': {
                             lat: -41.3192982,
                             lng: -72.9877923,
-                            address: 'San Francisco 666, Local 113, Puerto Varas',
+                            address: 'San Francisco 666 L° 113, Puerto Varas',
+                            phone: '9 779 14585',
+                            email:'puerovaras@sei.cl'
                             //phone: '(+56 2)',
                             //schedules: 'Lunes a Domingo:'
                         }
@@ -769,7 +794,8 @@ function getAllData() {
                             lat: -39.8138643,
                             lng: -73.2462273,
                             address: 'Caupolican 465 Local 238, Valdivia',
-                            //phone: '(+56 2)',
+                            email:'valdivia@sei.cl',
+                            phone: '9 585 82667'
                             //schedules: 'Lunes a Domingo:'
                         }
                     }
@@ -782,20 +808,8 @@ function getAllData() {
                             lat: -35.4274022,
                             lng: -71.6570713,
                             address: 'Uno Sur 1537 Local 119-120, Talca',
-                            phone: '(+56 71 2216941)',
-                            //schedules: 'Lunes a Domingo:'
-                        }
-                    }
-                },
-                Curicó: {
-                    lat: '-34.9844271',
-                    lng: '-71.242218',
-                    stores: {
-                        'Curicó': {
-                            lat: -34.9843932,
-                            lng: -71.2438494,
-                            address: 'Peña 653-a, Curicó',
-                            phone: '(+56 75 2222309)',
+                            phone: '71 221 6941 | 9 500 82563',
+                            email:'talca@sei.cl'
                             //schedules: 'Lunes a Domingo:'
                         }
                     }
@@ -808,7 +822,8 @@ function getAllData() {
                             lat: -20.2327283,
                             lng: -70.1449784,
                             address: 'Av. Héroes de la concepción 2555, Local 126, Iquique',
-                            phone: '(+56 57 2561709)',
+                            phone: '57 256 1709 | 9 980 11074',
+                            email:'iquique@sei.cl'
                             //schedules: 'Lunes a Domingo:'
                         }
                     }
@@ -820,8 +835,9 @@ function getAllData() {
                         'Espacios Urbanos': {
                             lat: -32.8359031,
                             lng: -70.6033923,
-                            address: 'Santa Teresa 683, Local 26, Los Andes',
-                            phone: '(+56 34 2408399)',
+                            address: 'Santa Teresa 683 L° 26, Los Andes',
+                            phone: '3 4240 8399 | 9 980 11826',
+                            email:'losandes@sei.cl'
                             //schedules: 'Lunes a Domingo:'
                         }
                     }
@@ -834,7 +850,8 @@ function getAllData() {
                             lat: -33.0451417,
                             lng: -71.4234885,
                             address: 'Avda. Freire 2414, Local 1112, Quilpué',
-                            phone: '(+56 32 2511148)',
+                            phone: '3 2251 1148 | 9 905 57765',
+                            email:'belloto@sei.cl'
                             //schedules: 'Lunes a Domingo:'
                         }
                     }
@@ -846,15 +863,17 @@ function getAllData() {
                         'Galeria Lagomarsino': {
                             lat: -33.0247081,
                             lng: -71.5558857,
-                            address: 'Avda. Valparaíso 617, Local 2, Viña del Mar',
-                            phone: '(+56 32-2712053)',
+                            address: 'Av. Valparaiso 617 Local 2, Viña del Mar',
+                            phone: '3 227 12053 | 9 980 11458',
+                            email:'vina@sei.cl'
                             //schedules: 'Lunes a Domingo:'
                         },
                         'Marina Arauco': {
                             lat: -33.0088544,
                             lng: -71.5507501,
                             address: 'Avda. Libertad 1348, Local 013, Viña del Mar',
-                            phone: '(+56 32 2683831)',
+                            phone: '3 226 83831 | 9 980 11742',
+                            email:'marina@sei.cl'
                             //schedules: 'Lunes a Domingo:'
                         }
                     }
@@ -866,8 +885,9 @@ function getAllData() {
                         'Mall Paseo Ross': {
                             lat: -33.048612,
                             lng: -71.606016,
-                            address: 'Av. Argentina 540, Local 115-117, Valparaiso',
-                            //phone: '(+56 2)',
+                            address: 'Av. Argentina 540 L°115-117, Valparaiso',
+                            email:'valparaiso@sei.cl',
+                            phone: '9 868 94873'
                             //schedules: 'Lunes a Domingo:'
                         }
                     }
@@ -880,21 +900,23 @@ function getAllData() {
                             lat: -33.4396888,
                             lng: -70.6510426,
                             address: 'Huérfanos 864, Santiago',
-                            phone: '(+56 22 5920110)',
+                            phone: '2 259 20110 | 9 672 87048',
+                            email:'estado@sei.cl'
                             //schedules: 'Lunes a Domingo:'
                         },
                         'Huerfanos': {
                             lat: -33.4397835,
                             lng: -70.6540277,
-                            address: 'Huérfanos 1052, Local 38, Santiago',
-                            //phone: '(+56 2)',
+                            address: 'Huérfanos 1052 L° 38/39, Santiago',
+                            phone: '2 268 86313 | 9 980 11503'
                             //schedules: 'Lunes a Domingo:'
                         },
                         'Matte': {
                             lat: -33.4391439,
                             lng: -70.6530469,
                             address: 'Ahumada 341, Local 921, Santiago',
-                            phone: '(+56 22 6396314)',
+                            phone: '2 263 96314 | 9 980 11068',
+                            email:'matte@sei.cl'
                             //schedules: 'Lunes a Domingo:'
                         },
                         'Ñuñoa': {
@@ -984,8 +1006,8 @@ function getAllData() {
                         'Vivo Imperio': {
                             lat: -33.5345153,
                             lng: -70.5725645,
-                            address: 'Agustinas 833, Local #880, Santiago',
-                            //phone: '(+56 2)',
+                            address: 'Agustinas 833 Santiago L° 880, Santiago',
+                            phone: '9 945 86192'
                             //schedules: 'Lunes a Domingo:'
                         },
                         'Easton Buenav': {
@@ -1002,23 +1024,22 @@ function getAllData() {
                             phone: '(+56 22 2420771)',
                             //schedules: 'Lunes a Domingo:'
                         }
-                    },
-                    Melipilla: {
-                        lat: '-33.6851134',
-                        lng: '-71.2162971',
-                        stores: {
-                            'Melipilla': {
-                                lat: -33.6849676,
-                                lng: -71.2158767,
-                                address: 'Serrano 395, Local 216-217, Melipilla',
-                                phone: '(+56 228320348)',
-                                //schedules: 'Lunes a Domingo:'
-                            }
-                        }
-                    },
+                    }
                 },
-
-
+                Melipilla: {
+                    lat: '-33.6851134',
+                    lng: '-71.2162971',
+                    stores: {
+                        'Melipilla': {
+                            lat: -33.6849676,
+                            lng: -71.2158767,
+                            address: 'Serrano 395 L° 216, Melipilla',
+                            phone: '2 283 20348 | 9 777 51074',
+                            email:'melipilla@sei.cl'
+                            //schedules: 'Lunes a Domingo:'
+                        }
+                    }
+                }
             }
         }
     };
