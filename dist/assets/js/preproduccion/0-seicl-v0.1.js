@@ -4,7 +4,7 @@
 
 Projecto:  SEI  - 2018
 Version: 0.0.1
-Ultimo cambio: 2018/05/16 | 13:12 pm
+Ultimo cambio: 2018/05/16 | 14:45 pm
 Asignado a: Implementacion
 Primary use: Ecommerce
 
@@ -65,8 +65,7 @@ var confiGenerales = {
         confiGenerales.fraseBusqueda();
         confiGenerales.masterData();
         confiGenerales.miniCartHover();
-        confiGenerales.megaMenu('main, #header,.Widemenu_title');
-        // confiGenerales.megaMenu('#header, #widemenu, main, .Widemenu_title:not(.active)');
+        confiGenerales.megaMenu('#header, #widemenu, main,.no-megamenu');
         $(window).load(function () {
             confiGenerales.exitLogin();
         });

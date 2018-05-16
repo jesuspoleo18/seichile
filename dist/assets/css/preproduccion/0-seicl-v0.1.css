@@ -4,7 +4,7 @@
 
 Projecto:  SEI - 2018
 Version: 0.0.1
-Ultimo cambio: 2018-05-16 | 13:37 pm
+Ultimo cambio: 2018-05-16 | 14:53 pm
 Asignado a: Implementacion.
 Primary use: Ecommerce. 
 
@@ -473,7 +473,11 @@ p {
     }
 }
 
-@media only screen and (min-width: 90.063em) {}
+@media only screen and (min-width: 90.063em) {
+    .middle-container__content {
+        width: 70%;
+    }
+}
 
 /* 
     [b2.Navigator] 
@@ -688,7 +692,14 @@ p {
     }
 }
 
-@media only screen and (min-width: 90.063em) {}
+@media only screen and (min-width: 90.063em) {
+    .top-line .top-bar__content {
+        width: 70%;
+    }
+    #widemenu .top-bar-container .menu-sei {
+        width: 60%;
+    }
+}
 
 /* 
     [b4.Footer]
@@ -805,10 +816,19 @@ p {
 
 .footer-info__container {
     margin: 0 auto;
-    width: 80%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
     flex-flow: wrap;
+}
+
+.content__coleccion,
+.content__sei,
+.content__servicio,
+.content__pago {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-container__info h3 {
@@ -1060,7 +1080,11 @@ p {
     }
 }
 
-@media only screen and (min-width: 90.063em) {}
+@media only screen and (min-width: 90.063em) {
+    .footer-info__container {
+        width: 60%;
+    }
+}
 
 /*
     [c0.Prateleira principal]
@@ -4759,7 +4783,11 @@ h4.group.Atributos {
     }
 }
 
-@media only screen and (min-width: 90.063em) {}
+@media only screen and (min-width: 90.063em) {
+    .product__bottom-side {
+        padding: 0 5rem;
+    }
+}
 
 /* 
     [f10.Departamento] 
