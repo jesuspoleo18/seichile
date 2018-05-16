@@ -1392,6 +1392,35 @@ p {
     [d0.Mini cart] 
 */
 
+.v2-vtexsc-cart.vtexsc-cart.showIt.mouseActivated.preLoaded {
+    /*     display: block!important; */
+    height: 100% !important
+}
+
+.v2-vtexsc-cart.vtexsc-cart,
+.v2-vtexsc-cart.vtexsc-cart.mouseActivated.preLoaded {
+    display: none !Important;
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, visibility;
+    transition-duration: 1s, 0s;
+    transition-delay: 0s, 0s;
+}
+
+.v2-vtexsc-cart.vtexsc-cart.showIt,
+.v2-vtexsc-cart.vtexsc-cart.showIt.mouseActivated.preLoaded,
+.showIt.vtexsc-center {
+    display: block !important;
+    transition-property: visibility, opacity;
+    transition-duration: 0s, 0.5s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.vtexsc-center {
+    background-color: white;
+}
+
 .amount-items-in-cart #MostraTextoXml1,
 .amount-items-in-cart #MostraTextoXml2,
 .amount-items-in-cart #MostraTextoXml3,
@@ -1578,17 +1607,19 @@ p {
 }
 
 .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart .cartFooter .cartTotal {
-    padding-bottom: .750rem
+    background-color: #1E1B1C;
+    padding: .5rem 0;
 }
 
 .portal-minicart-ref a.cartCheckout {
+    background: #ee5d79;
+    color: white;
     text-align: center;
-    background: #f3f3f3;
     padding: .5rem;
 }
 
 .portal-minicart-ref a.cartCheckout::before {
-    color: #1E1B1C;
+    color: white;
     font-size: .85rem;
     content: 'Ir al Pago';
     margin: 0 auto;
