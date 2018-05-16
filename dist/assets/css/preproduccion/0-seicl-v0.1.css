@@ -4,7 +4,7 @@
 
 Projecto:  SEI - 2018
 Version: 0.0.1
-Ultimo cambio: 2018-05-16 | 16:31 pm
+Ultimo cambio: 2018-05-16 | 16:42 pm
 Asignado a: Implementacion.
 Primary use: Ecommerce. 
 
@@ -1399,13 +1399,16 @@ p {
 */
 
 #header .v2-vtexsc-cart.vtexsc-cart.showIt.mouseActivated.preLoaded,
+#widemenu .v2-vtexsc-cart.vtexsc-cart.showIt.mouseActivated.preLoaded,
 .is-open .v2-vtexsc-cart.vtexsc-cart.mouseActivated.preLoaded {
     /*     display: block!important; */
     height: 100% !important
 }
 
 #header .v2-vtexsc-cart.vtexsc-cart,
-#header .v2-vtexsc-cart.vtexsc-cart.mouseActivated.preLoaded {
+#header .v2-vtexsc-cart.vtexsc-cart.mouseActivated.preLoaded,
+#widemenu .v2-vtexsc-cart.vtexsc-cart,
+#widemenu .v2-vtexsc-cart.vtexsc-cart.mouseActivated.preLoaded {
     display: none !Important;
     opacity: 0;
     visibility: hidden;
@@ -1416,7 +1419,10 @@ p {
 
 #header .v2-vtexsc-cart.vtexsc-cart.showIt,
 #header .v2-vtexsc-cart.vtexsc-cart.showIt.mouseActivated.preLoaded,
-#header .showIt.vtexsc-center {
+#header .showIt.vtexsc-center,
+#widemenu .v2-vtexsc-cart.vtexsc-cart.showIt,
+#widemenu .v2-vtexsc-cart.vtexsc-cart.showIt.mouseActivated.preLoaded,
+#widemenu .showIt.vtexsc-center {
     display: block !important;
     transition-property: visibility, opacity;
     transition-duration: 0s, 0.5s;
@@ -1429,6 +1435,7 @@ p {
 }
 
 #header .amount-items-in-cart #MostraTextoXml1,
+#widemenu .amount-items-in-cart #MostraTextoXml1,
 .title-bar-right__cart .amount-items-in-cart #MostraTextoXml1,
 .amount-items-in-cart #MostraTextoXml2,
 .amount-items-in-cart #MostraTextoXml3,
@@ -1524,7 +1531,8 @@ p {
     right: 121px;
 }
 
-#header .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart {
+#header .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart,
+#widemenu .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart {
     /* display: block !important; */
     position: absolute;
     right: -17px;
@@ -1542,7 +1550,8 @@ p {
     top: 55px;
 }
 
-#header .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart table tbody td {
+#header .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart table tbody td,
+#widemenu .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart table tbody td {
     padding: .5rem .2rem;
 }
 
@@ -1562,7 +1571,8 @@ p {
     height: 100%;
 }
 
-#header .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart td.cartSkuName {
+#header .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart td.cartSkuName,
+#widemenu .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart td.cartSkuName {
     width: 120px;
     display: block;
 }
@@ -1596,7 +1606,8 @@ p {
     padding: 0;
 }
 
-#header .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart .cartSkuQuantity span .vtexsc-skuQtt {
+#header .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart .cartSkuQuantity span .vtexsc-skuQtt,
+#widemenu .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart .cartSkuQuantity span .vtexsc-skuQtt {
     color: #1E1B1C;
     font-family: 'Dosis', sans-serif;
 }
@@ -4023,6 +4034,10 @@ form#formAddressNew button.close-button:before {
     [f8.Producto] 
 */
 
+.economia-de {
+    display: none;
+}
+
 .product__container {
     margin: 2rem auto;
     width: 80%;
@@ -4790,6 +4805,10 @@ h4.group.Atributos {
     width: 47%;
 }
 
+.valor-de.price-list-price {
+    font-style: initial;
+}
+
 /* 
     [f9.Mediaquerie producto] 
 */
@@ -4897,8 +4916,12 @@ h4.group.Atributos {
         margin-bottom: 0;
     }
     .valor-por.price-best-price,
-    .skuBestPrice {
+    .skuBestPrice,
+    .valor-de.price-list-price {
         text-align: center;
+    }
+    .valor-de.price-list-price {
+        font-style: initial;
     }
     #caracteristicas {
         flex-flow: wrap;
