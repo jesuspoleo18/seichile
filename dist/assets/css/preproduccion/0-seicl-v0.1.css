@@ -4,7 +4,7 @@
 
 Projecto:  SEI - 2018
 Version: 0.0.1
-Ultimo cambio: 2018-05-16 | 15:55 pm
+Ultimo cambio: 2018-05-16 | 16:31 pm
 Asignado a: Implementacion.
 Primary use: Ecommerce. 
 
@@ -1398,13 +1398,14 @@ p {
     [d0.Mini cart] 
 */
 
-.v2-vtexsc-cart.vtexsc-cart.showIt.mouseActivated.preLoaded {
+#header .v2-vtexsc-cart.vtexsc-cart.showIt.mouseActivated.preLoaded,
+.is-open .v2-vtexsc-cart.vtexsc-cart.mouseActivated.preLoaded {
     /*     display: block!important; */
     height: 100% !important
 }
 
-.v2-vtexsc-cart.vtexsc-cart,
-.v2-vtexsc-cart.vtexsc-cart.mouseActivated.preLoaded {
+#header .v2-vtexsc-cart.vtexsc-cart,
+#header .v2-vtexsc-cart.vtexsc-cart.mouseActivated.preLoaded {
     display: none !Important;
     opacity: 0;
     visibility: hidden;
@@ -1413,9 +1414,9 @@ p {
     transition-delay: 0s, 0s;
 }
 
-.v2-vtexsc-cart.vtexsc-cart.showIt,
-.v2-vtexsc-cart.vtexsc-cart.showIt.mouseActivated.preLoaded,
-.showIt.vtexsc-center {
+#header .v2-vtexsc-cart.vtexsc-cart.showIt,
+#header .v2-vtexsc-cart.vtexsc-cart.showIt.mouseActivated.preLoaded,
+#header .showIt.vtexsc-center {
     display: block !important;
     transition-property: visibility, opacity;
     transition-duration: 0s, 0.5s;
@@ -1427,7 +1428,8 @@ p {
     background-color: white;
 }
 
-.amount-items-in-cart #MostraTextoXml1,
+#header .amount-items-in-cart #MostraTextoXml1,
+.title-bar-right__cart .amount-items-in-cart #MostraTextoXml1,
 .amount-items-in-cart #MostraTextoXml2,
 .amount-items-in-cart #MostraTextoXml3,
 .amount-items-in-cart #MostraTextoXml4,
@@ -1522,7 +1524,7 @@ p {
     right: 121px;
 }
 
-.portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart {
+#header .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart {
     /* display: block !important; */
     position: absolute;
     right: -17px;
@@ -1540,7 +1542,7 @@ p {
     top: 55px;
 }
 
-.portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart table tbody td {
+#header .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart table tbody td {
     padding: .5rem .2rem;
 }
 
@@ -1560,7 +1562,7 @@ p {
     height: 100%;
 }
 
-.portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart td.cartSkuName {
+#header .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart td.cartSkuName {
     width: 120px;
     display: block;
 }
@@ -1594,7 +1596,7 @@ p {
     padding: 0;
 }
 
-.portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart .cartSkuQuantity span .vtexsc-skuQtt {
+#header .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart .cartSkuQuantity span .vtexsc-skuQtt {
     color: #1E1B1C;
     font-family: 'Dosis', sans-serif;
 }
@@ -1636,20 +1638,94 @@ p {
 */
 
 @media only screen and (max-width: 40em) {
-    .amount-items-in-cart ul {
+    .is-open .title {
+        display: block;
+        width: 100%;
+    }
+    #MostraTextoXml1 {
+        border-bottom: 1px solid #555;
+        color: transparent;
+        display: block;
+        margin-bottom: 1rem;
+        padding-bottom: .5rem;
+        position: relative;
+        width: 100%;
+    }
+    #MostraTextoXml1:before {
+        content: 'Resumen de carrito';
+        color: black;
         position: absolute;
-        left: 0;
-        top: 0;
+    }
+    .is-open .amount-items-in-cart ul .amount-items,
+    .is-open .cart-info {
+        display: none;
     }
     .amount-items-in-cart ul .amount-items {
         font-size: .75rem;
-        left: 24px;
+        left: -15px;
         top: -5px;
         width: 1.15rem;
         height: 1.15rem;
     }
-    .amount-items-in-cart ul .total-cart {
-        display: none;
+    .is-open .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart .cartFooter .cartTotal {
+        background: transparent;
+        color: black;
+        text-align: left;
+    }
+    .is-open .vtexsc-productList {
+        display: flex;
+        flex-flow: wrap;
+    }
+    .is-open .vtexsc-productList tbody,
+    .is-open .vtexsc-productList tr {
+        /*         border:1px solid red; */
+        width: 100%;
+    }
+    .is-open .vtexsc-productList tr {
+        background: transparent;
+        display: flex;
+        flex-flow: wrap;
+        align-items: center;
+    }
+    .is-open .cartSkuName,
+    .is-open .cartSkuImage {
+        padding: 0;
+        width: 50%;
+    }
+    .is-open .cartSkuPrice,
+    .is-open .cartSkuQuantity,
+    .is-open .cartSkuActions {
+        border: 1px solid #eee;
+        height: 30px;
+        min-height: 30px;
+        padding: 0;
+        padding-top: 1.8rem;
+        padding-bottom: .8rem;
+        position: relative;
+        width: 33.3%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .is-open .cartSkuPrice:before,
+    .is-open .cartSkuQuantity:before,
+    .is-open .cartSkuActions:before {
+        content: "Total";
+        background-color: #eee;
+        font-size: .6rem;
+        padding: .2rem 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    .is-open .cartSkuQuantity:before {
+        content: 'Cantidad';
+    }
+    .is-open .cartSkuActions:before {
+        content: 'Eliminar';
+    }
+    .vtexsc-skuQtt {
+        font-size: .8rem;
     }
 }
 
@@ -2409,22 +2485,36 @@ p {
     padding-top: 3rem;
 }
 
-.off-canvas.position-right.is-transition-overlap.is-open .is-drilldown,
-.off-canvas.position-right.is-transition-overlap.is-open .menu.vertical,
-.off-canvas.position-right.is-transition-overlap.is-open .AmountItemsInCart,
-.off-canvas.position-right.is-transition-overlap.is-open .AmountItemsInCart a,
-.off-canvas.position-right.is-transition-overlap.is-open .portal-totalizers-ref,
-.off-canvas.position-right.is-transition-overlap.is-open .amount-items-in-cart,
-.off-canvas.position-right.is-transition-overlap.is-open .cartInfoWrapper {
-    border: 1px solid red;
-    height: 100% !important;
+.is-open {
+    background-color: white;
+}
+
+.is-open .portal-minicart-ref .v2-vtexsc-cart.vtexsc-cart .is-open .is-drilldown,
+.is-open .menu.vertical,
+.is-open .AmountItemsInCart,
+.is-open .AmountItemsInCart a,
+.is-open .portal-totalizers-ref,
+.is-open .amount-items-in-cart,
+.is-open .cartInfoWrapper {
+    /*     border: 1px solid red; */
+}
+
+.is-open .v2-vtexsc-cart.vtexsc-cart,
+.is-open .v2-vtexsc-cart.vtexsc-cart.mouseActivated.preLoaded {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
 }
 
 /*
     [e3.Mediaquerie off canvas]
 */
 
-@media only screen and (max-width: 40em) {}
+@media only screen and (max-width: 40em) {
+    .title-bar-right__cart .total-cart {
+        display: none;
+    }
+}
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
     .off-canvas.position-left.is-open.Widemenu-mobile {
