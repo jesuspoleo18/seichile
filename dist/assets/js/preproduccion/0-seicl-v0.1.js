@@ -4,7 +4,7 @@
 
 Projecto:  SEI  - 2018
 Version: 0.0.1
-Ultimo cambio: 2018/05/09 | 13:06 pm
+Ultimo cambio: 2018/05/15 | 17:26 pm
 Asignado a: Implementacion
 Primary use: Ecommerce
 
@@ -57,7 +57,6 @@ var confiGenerales = {
         confiGenerales.stickyNav('#Widemenu_mobile');
         confiGenerales.triggerSearchMobile();
         confiGenerales.elementosFormato();
-        confiGenerales.FormatoDecimales();
         confiGenerales.accordion('.toggle-trigger', '.toggle-container');
         confiGenerales.backTop();
         confiGenerales.copyRigth();
@@ -65,12 +64,27 @@ var confiGenerales = {
         //confiGenerales.imprimirLista();
         confiGenerales.fraseBusqueda();
         confiGenerales.masterData();
+        confiGenerales.miniCartHover();
         confiGenerales.megaMenu('main, #header,.Widemenu_title');
         // confiGenerales.megaMenu('#header, #widemenu, main, .Widemenu_title:not(.active)');
         $(window).load(function () {
             confiGenerales.exitLogin();
         });
 
+    },
+    miniCartHover: function() {
+        let $noSticky = $(".middle-container__content-cart");
+        let $sticky = $(".megamenu-container__content-cart");
+        $noSticky.hover(function () {
+            $(this).find(".v2-vtexsc-cart.vtexsc-cart").addClass("showIt");
+        }, function () {
+            $(this).find(".v2-vtexsc-cart.vtexsc-cart").removeClass("showIt");
+        });
+        $sticky.hover(function () {
+            $(this).find(".v2-vtexsc-cart.vtexsc-cart").addClass("showIt");
+        }, function () {
+            $(this).find(".v2-vtexsc-cart.vtexsc-cart").removeClass("showIt");
+        });
     },
     stickyNav: function (el) {
         $(window).scroll(function () {
@@ -212,49 +226,37 @@ var confiGenerales = {
     },
     elementosFormato: function () {
 
-        var $ajaxStopElems = '.skuListPrice, .skuBestPrice, .bestPrice, .oldPrice, .price-best-price, .skuBestInstallmentValue, em.total-cart-em, span.vtexsc-text, td.monetary, span.best-price.new-product-price, td.quantity-price.hidden-phone.hidden-tablet,span.payment-value-monetary,span.payment-installments, .producto-prateleira__info--bestPrice div, .producto-prateleira__info--oldPrice div, .giftlistproductsv2 td',
-            $porcentaje = $('.porcentaje');
-
-        if ($porcentaje.lenght) {
-
-            $porcentaje.each(function () {
-
+        var $ajaxStopElems = '.skuListPrice, .skuBestPrice, .bestPrice, .oldPrice, .price-best-price, .skuBestInstallmentValue, em.total-cart-em, span.vtexsc-text, td.monetary, span.best-price.new-product-price, td.quantity-price.hidden-phone.hidden-tablet,span.payment-value-monetary,span.payment-installments, .producto-prateleira__info--bestPrice div, .producto-prateleira__info--oldPrice div, .giftlistproductsv2 td';
+        var $porcentaje = $('.porcentaje');
+        var porcentaje = function(el) {
+            $(el).each(function () {
                 var valor = $(this).text();
-                if (valor == 0) {
-                    $(this).remove();
-                } else {
-                    $(this).text(valor.split(',')[0] + '%');
-                }
-
-            });
-
-        } else {
-            console.log("porcentaje desactivado");
-        }
-
-        confiGenerales.FormatoDecimales($ajaxStopElems);
-        porcentaje();
-
-        $(document).ajaxStop(function () {
-            confiGenerales.FormatoDecimales($ajaxStopElems);
-            porcentaje();
-        });
-
-        function porcentaje() {
-
-            $(".porcentaje-content").each(function () {
-
-                var valor = $(this).text();
-
                 if (valor == 0) {
                     $(this).remove();
                 } else {
                     $(this).text(valor.replace(',0', ''));
                 }
-
             });
-        }
+        };
+        confiGenerales.FormatoDecimales($ajaxStopElems);
+        // porcentaje('.porcentaje-content');
+        $(document).ajaxStop(function () {
+            confiGenerales.FormatoDecimales($ajaxStopElems);
+            // porcentaje('.porcentaje-content');
+        });
 
+        // if ($porcentaje.lenght) {
+        //     $porcentaje.each(function () {
+        //         var valor = $(this).text();
+        //         if (valor == 0) {
+        //             $(this).remove();
+        //         } else {
+        //             $(this).text(valor.split(',')[0] + '%');
+        //         }
+        //     });
+        // } else {
+        //     console.log("porcentaje desactivado");
+        // }
     },
     accordion: function (trigger, content) {
 
@@ -552,26 +554,41 @@ var home = {
 var producto = {
 
     init: function () {
-
         var $producto = $("body.produto");
-
         if ($producto.length) {
-
             producto.qtdControl();
             producto.sizeNecessary();
-
+            producto.skuOnChange();
         }
-
     },
-
+    noStock: function () {
+        let $a = $(".buy-button.buy-button-ref");
+        let $body = $("body");
+        if ($a.css('display') == 'none') {
+            $body.addClass('no-stock');
+            return true;
+        } else {
+            $body.removeClass('no-stock');
+            return false;
+        }
+    },
+    skuOnChange: function () {
+        let $skuSelector = $(".skuselector-specification-label");
+        $skuSelector.on("click", function () {
+            vtexjs.catalog.getCurrentProductWithVariations().done(function (product) {
+                setTimeout(function () {
+                    producto.noStock();
+                    confiGenerales.elementosFormato();
+                }, 500);
+            });
+        });
+    },
     qtdControl: function () {
-
         var $btnComprarProduto = $('.buy-button.buy-button-ref'),
             $notifyme = $(this).find(".notifyme.sku-notifyme:visible"),
             qty = {
                 cantidad: ""
             };
-
         if ($btnComprarProduto.length) {
 
             var $recebeQtyForm = $btnComprarProduto.parents('.product__shop-content');
@@ -658,11 +675,8 @@ var producto = {
             }
 
         }
-
     },
-
     sizeNecessary: function () {
-
         $(".buy-button.buy-button-ref").click(function () {
             if ($(this).attr('href') === "javascript:alert('Por favor, selecione o modelo desejado.');") {
                 //$('#sizeNecessary').foundation('open');
@@ -714,13 +728,11 @@ var producto = {
 
             return false;
         });
-
     }
 
 };
 
 // 5.Controles de depto y categ.
-
 var categDepto = {
     init: function(){
         var $accepted = $(".categoria");

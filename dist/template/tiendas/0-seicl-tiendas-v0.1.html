@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce"
+    lang="en-us">
+
+<!-- head -->
+
+<head>
+    <!-- title -->
+    <vtex:contentPlaceHolder id="tiendas-title" />
+    <!-- sub template head -->
+    <vtex:template id="1-seicl-head" />
+</head>
+<!-- /.end head -->
+
+<!-- body -->
+
+<body>
+
+    <!-- inicio off canvas wrapper -->
+    <div class="off-canvas-wrap" data-offcanvas="">
+
+        <!-- inicio off canvas wrapper inner -->
+        <div class="inner-wrap">
+
+            <!-- header -->
+            <header id="header">
+                <vtex:template id="1-seicl-header" />
+            </header>
+            <!-- /.end header -->
+
+            <!-- navigation -->
+            <nav>
+                <vtex:template id="1-seicl-navigator" />
+            </nav>
+            <!-- /.end navigation -->
+
+            <!-- main -->
+            <main>
+
+                <!-- bread-crumb -->
+                <div class="static__breadcrumb">
+                    <div class="bread-crumb">
+                        <ul>
+                            <li>
+                                <a title="SEI Chile" href="/">SEI Chile</a>
+                            </li>
+                            <li class="last">
+                                <strong>
+                                    <a title="Tiendas" href="/tiendas">Tiendas</a>
+                                </strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.end bread-crumb -->
+
+                <!-- main container -->
+                <section id="tiendas" class="main-section container">
+
+                    <!-- tiendas title -->
+                    <div class="tiendas__container--title">
+                        <vtex:contentPlaceHolder id="tiendas-title" />
+                    </div>
+                    <!-- /.end tiendas title -->
+
+                    <!-- container map -->
+                    <div class="tiendas__container--map">
+
+                        <!-- content map -->
+                        <div class="tiendas__map-content">
+
+                            <!-- store controls -->
+                            <div class="store__controls">
+
+                                <select id="pais" aria-expanded="false"></select>
+                                <h6 class="store__title-selectLocation">Seleccionar Ubicación</h6>
+                                <select id="ciudad" aria-expanded="false"></select>
+
+                            </div>
+                            <!-- /.fin store controls -->
+
+                            <!-- store container -->
+                            <div class="store__container">
+                                <!-- store content -->
+                                <div class="store__content">
+
+                                    <div class="store__warning">
+                                        <h1>Por favor, selecciona una ciudad.</h1>
+                                    </div>
+
+                                    <!-- store results -->
+                                    <div class="store__results">
+                                        <h2>Encuentranos en: </h2>
+                                        <div class="stores_ul"></div>
+                                    </div>
+                                    <!-- /.fin store results -->
+
+                                    <!-- store info -->
+                                    <div class="store__info">
+                                        <div id="storeContent"></div>
+                                    </div>
+                                    <!-- /.fin store info -->
+
+                                </div>
+                                <!-- /.end store content -->
+                            </div>
+                            <!-- /.end store container -->
+
+                            <div id="map-canvas"></div>
+
+                        </div>
+                        <!-- /.end content map -->
+
+                    </div>
+                    <!-- /.end container map -->
+
+                </section>
+                <!-- /.end main container -->
+
+            </main>
+            <!-- /.end main -->
+
+            <!-- facebook api -->
+            <vtex:template id="1-seicl-fbsdk" />
+
+            <!-- footer -->
+            <footer>
+                <script type="text/javascript" src="/files/sei_tiendas.js"></script>
+                <vtex:template id="1-seicl-footer" />
+            </footer>
+            <!-- /.end footer -->
+
+            <!-- back to top -->
+            <a href="#0" class="back-to-top back-to-top-is-visible"></a>
+
+        </div>
+        <!-- /.end inicio off canvas wrapper inner -->
+
+    </div>
+    <!-- /.end inicio off canvas wrapper -->
+
+</body>
+<!-- /.end body -->
+
+</html>
